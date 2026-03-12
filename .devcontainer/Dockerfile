@@ -1,6 +1,7 @@
 FROM mcr.microsoft.com/devcontainers/dotnet:1-9.0-bookworm
 
-RUN apt-get update \
+RUN rm -f /etc/apt/sources.list.d/yarn.list \
+    && apt-get update \
     && apt-get install -y --no-install-recommends curl ca-certificates gnupg \
     && mkdir -p /etc/apt/keyrings \
     && curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key \

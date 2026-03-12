@@ -1,6 +1,6 @@
 {
   "name": "wedding-site",
-  "dockerComposeFile": "../docker-compose.yaml",
+  "dockerComposeFile": "../docker-compose.yml",
   "service": "workspace",
   "workspaceFolder": "/workspace",
   "shutdownAction": "stopCompose",
@@ -15,6 +15,6 @@
     }
   },
   "forwardPorts": [5173, 5050, 5432],
-  "postCreateCommand": "bash .devcontainer/post-create.sh",
+  "postCreateCommand": "bash .devcontainer/postCreateScript.sh",
   "remoteUser": "root"
 }
