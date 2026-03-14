@@ -1,6 +1,11 @@
 {
   "name": "wedding-site",
   "dockerComposeFile": "../docker-compose.yml",
+
+  "features": {
+    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {}
+  },
+
   "service": "workspace",
   "workspaceFolder": "/workspace",
   "shutdownAction": "stopCompose",
