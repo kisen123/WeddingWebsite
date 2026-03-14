@@ -1,4 +1,3 @@
-import React from "react";
 import { Header } from "./components/Header/Header.tsx";
 import { MainPage } from "./components/MainPage/MainPage.tsx";
 
