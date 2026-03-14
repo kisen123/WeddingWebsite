@@ -1,0 +1,39 @@
+:root {
+    --header-height: 7rem;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background-color: #cea6ff2f;
+
+    &__logo {
+        font-size: 1.2rem;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+    }
+
+    &__nav {
+        display: flex;
+        gap: 1.5rem;
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            font-size: 0.95rem;
+            letter-spacing: 0.03em;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
