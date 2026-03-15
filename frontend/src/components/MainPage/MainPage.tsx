@@ -59,7 +59,7 @@ export function MainPage() {
       {loading && <p>Loading...</p>}
 
       {info && (
-        <section>
+        <section id="info">
           <h2>{info.couple}</h2>
           <p>{info.date}</p>
           <p>
@@ -70,7 +70,7 @@ export function MainPage() {
 
       <hr style={{ margin: "2rem 0" }} />
 
-      <section>
+      <section id="rsvp">
         <h2>RSVP</h2>
 
         <form onSubmit={handleSubmit} style={{ display: "grid", gap: "0.75rem" }}>

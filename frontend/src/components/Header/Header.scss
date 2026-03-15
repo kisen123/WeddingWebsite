@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Great+Vibes&family=Alex+Brush&family=Parisienne&family=Italianno&family=Dancing+Script&family=Sacramento&family=Allura&family=Clicker+Script&family=Cormorant+Garamond:ital@1&display=swap');
+
+
 :root {
-    --header-height: 7rem;
+    --header-height: 10rem;
 }
 
 .header {
-    position: fixed;
+    position: sticky;
     top: 0;
     left: 0;
     right: 0;
@@ -13,12 +16,17 @@
     align-items: center;
     justify-content: space-between;
     padding: 1rem 2rem;
-    background-color: #cea6ff2f;
+    background-color: #F0EAD6;
 
-    &__logo {
-        font-size: 1.2rem;
-        font-weight: 600;
-        letter-spacing: 0.05em;
+    &__decor {
+        width: calc(100% + 4rem);
+        margin-left: -2rem;
+        margin-right: -2rem;
+        margin-top: -1rem;
+        margin-bottom: 0;
+        height: 5rem;
+        display: block;
+        flex-shrink: 0;
     }
 
     &__nav {
@@ -36,4 +44,36 @@
             }
         }
     }
+
+    &__names {
+        font-size: 2.0rem;
+        font-family: 'Great Vibes', cursive;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 1.9rem;
+
+        letter-spacing: 0.01em;
+    }
+
+    &__groom {
+        font-weight: 100;
+        margin: 1.0rem;
+    }
+
+    &__bride {
+        font-weight: 100;
+        margin: 1.0rem;
+    }
+
+
+    &__date {
+        font-size: 0.95rem;
+        font-family: 'Dancing Script', cursive;
+        letter-spacing: 0.03em;
+
+        margin: 0.5rem 0 2.0rem 0;
+    }
+    
 }
