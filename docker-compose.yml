@@ -6,6 +6,13 @@ services:
       dockerfile: Dockerfile
     ports:
       - "5173:5173"
+    develop:
+      watch:
+        - action: sync
+          path: ./frontend/src
+          target: /frontend_server/src
+        - action: rebuild
+          path: ./frontend/package.json
     depends_on:
       - backend
 
