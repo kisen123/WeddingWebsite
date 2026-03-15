@@ -1,6 +1,6 @@
 {
   "name": "wedding-site",
-  "dockerComposeFile": "../docker-compose.yml",
+  "dockerComposeFile": "./docker-compose.yml",
 
   "features": {
     "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {}

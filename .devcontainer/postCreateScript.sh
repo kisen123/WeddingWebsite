@@ -4,5 +4,5 @@ set -e
 cd /workspace/frontend
 npm install
 
-cd /workspace/backend
-dotnet restore
+# cd /workspace
+# dotnet restore bryllup-nettside.sln

@@ -1,0 +1,16 @@
+# Build output
+bin/
+obj/
+
+# NuGet
+*.nupkg
+*.snupkg
+project.nuget.cache
+
+# User-specific
+*.user
+*.userosscache
+
+# Publish output
+publish/
+out/
