@@ -10,7 +10,7 @@ type WeddingInfo = {
 
 export function MainPage() {
 
-    const [info, setInfo] = useState<WeddingInfo | null>(null);
+  const [info, setInfo] = useState<WeddingInfo | null>(null);
   const [loading, setLoading] = useState(true);
   const [message, setMessage] = useState("");
 

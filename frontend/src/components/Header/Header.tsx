@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { MistletoeDecor } from './MistletoeDecor';
+import { PageButton } from '../PageButton/PageButton';
 import './Header.scss';
 
 export function Header() {
@@ -15,11 +15,11 @@ export function Header() {
             </div>
             <div className="header__date">28.08.2027</div>
             <nav className="header__nav">
-                <Link to="/">{t("nav.home")}</Link>
-                <Link to="/info">{t("nav.info")}</Link>
-                <Link to="/rsvp">{t("nav.rsvp")}</Link>
-                <Link to="/contact">{t("nav.contact")}</Link>
-                <Link to="/q-a">{t("nav.qA")}</Link>
+                <PageButton text={t("nav.home")} to="/" />
+                <PageButton text={t("nav.info")} to="/info" />
+                <PageButton text={t("nav.rsvp")} to="/rsvp" />
+                <PageButton text={t("nav.contact")} to="/contact" />
+                <PageButton text={t("nav.qA")} to="/q-a" />
             </nav>
         </header>
     );
