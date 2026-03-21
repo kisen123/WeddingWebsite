@@ -1,14 +1,16 @@
 {
   "name": "wedding-site",
-  "dockerComposeFile": "./docker-compose.yml",
-
-  "features": {
-    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {}
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
   },
 
-  "service": "workspace",
-  "workspaceFolder": "/workspace",
-  "shutdownAction": "stopCompose",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {},
+    "ghcr.io/devcontainers/features/node:1": { "version": "22" }
+  },
+
+  "workspaceFolder": "/workspaces/bryllup-nettside",
   "customizations": {
     "vscode": {
       "extensions": [
@@ -21,5 +23,5 @@
   },
   "forwardPorts": [5173, 5050, 5432],
   "postCreateCommand": "bash .devcontainer/postCreateScript.sh",
-  "remoteUser": "root"
+  "remoteUser": "vscode"
 }
