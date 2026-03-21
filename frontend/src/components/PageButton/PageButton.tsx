@@ -7,7 +7,7 @@ export function PageButton({ text, to }: { text: string, to: string }) {
 
     function handleClick() {
         setClicking(true);
-        setTimeout(() => setClicking(false), 400);
+        setTimeout(() => setClicking(false), 80);
     }
 
     return (

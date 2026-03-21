@@ -30,6 +30,12 @@
     &__nav {
         display: flex;
         gap: 4.5rem;
+
+        .page-button:nth-child(1) { animation-delay: 0.3s; }
+        .page-button:nth-child(2) { animation-delay: 0.4s; }
+        .page-button:nth-child(3) { animation-delay: 0.5s; }
+        .page-button:nth-child(4) { animation-delay: 0.6s; }
+        .page-button:nth-child(5) { animation-delay: 0.7s; }
     }
 
     &__names {
@@ -56,6 +62,7 @@
         animation: write-in 1.2s ease forwards;
         animation-delay: 0.4s;
         clip-path: inset(0 100% 0 0);
+        opacity: 0;
     }
 
     &__date {
@@ -68,6 +75,12 @@
 }
 
 @keyframes write-in {
-    from { clip-path: inset(0 100% 0 0); }
-    to   { clip-path: inset(0 0% 0 0); }
+    from {
+        clip-path: inset(0 100% 0 0);
+        opacity: 0;
+    }
+    to {
+        clip-path: inset(0 0% 0 0);
+        opacity: 1;
+    }
 }
