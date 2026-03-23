@@ -1,9 +1,14 @@
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 const string FrontendCorsPolicy = "Frontend";
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddDbContext<WeddingDbContext>(options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("Default")));
 
 builder.Services.AddCors(options =>
 {
@@ -47,7 +52,7 @@ app.MapGet("/api/info", () =>
     });
 });
 
-app.MapPost("/api/rsvp", (RsvpRequest request) =>
+app.MapPost("/api/rsvp", async (RsvpRequest request, WeddingDbContext db) =>
 {
     if (string.IsNullOrWhiteSpace(request.Name))
     {
@@ -59,11 +64,29 @@ app.MapPost("/api/rsvp", (RsvpRequest request) =>
         return Results.BadRequest(new { error = "Email is required." });
     }
 
+    var entry = new RsvpEntry
+    {
+        Name = request.Name,
+        Email = request.Email,
+        Attending = request.Attending,
+        DietaryRequirements = request.DietaryRequirements,
+        SongRequest = request.SongRequest
+    };
+
+    db.RsvpEntries.Add(entry);
+    await db.SaveChangesAsync();
+
     return Results.Ok(new
     {
         message = "RSVP received",
         guest = request.Name
     });
+});
+
+app.MapGet("/api/rsvp", async (WeddingDbContext db) =>
+{
+    var entries = await db.RsvpEntries.OrderByDescending(e => e.SubmittedAt).ToListAsync();
+    return Results.Ok(entries);
 });
 
 app.Run();

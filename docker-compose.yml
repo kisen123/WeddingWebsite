@@ -25,6 +25,7 @@ services:
     environment:
       ASPNETCORE_ENVIRONMENT: Development
       ASPNETCORE_URLS: http://0.0.0.0:5050
+      ConnectionStrings__Default: "Host=db;Port=5432;Database=wedding;Username=wedding;Password=wedding"
     depends_on:
       - db
 
