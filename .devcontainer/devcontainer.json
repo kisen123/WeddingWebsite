@@ -17,7 +17,8 @@
         "ms-dotnettools.csharp",
         "ms-azuretools.vscode-docker",
         "dbaeumer.vscode-eslint",
-        "esbenp.prettier-vscode"
+        "esbenp.prettier-vscode",
+        "openai.chatgpt",
       ]
     }
   },

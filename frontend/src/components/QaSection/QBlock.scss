@@ -1,0 +1,44 @@
+.qBlockClickable {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #d8c68c;
+    padding: 1rem;
+    border-radius: 8px;
+    min-width: 800px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: #F0EAD6;
+    }
+
+    &__icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 1.5rem;
+    }
+
+    &__icon svg {
+        width: 2rem;
+        height: 2rem;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    &__icon path {
+        stroke: #5f4a20;
+        stroke-width: 2.5;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+    }
+
+    &--open &__icon svg {
+        transform: rotate(90deg);
+        opacity: 0.7;
+    }
+}
+
+.question {
+    margin: 0.2rem 1.0rem 0.2rem 1.0rem;
+}
