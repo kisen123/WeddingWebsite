@@ -29,6 +29,16 @@
     },
     "qaSection": {
         "title": "Spørsmål og svar",
-        "description": "Her finner du svar på ofte stilte spørsmål om bryllupet."
+        "description": "Her finner du svar på ofte stilte spørsmål om bryllupet.",
+        "questions": {
+            "question1": "Hva er datoen for bryllupet?",
+            "question2": "Hvor finner bryllupet sted?",
+                "question3": "Hva er kleskoden?"
+            },
+            "answers": {
+            "answer1": "Bryllupet finner sted den 15. august 2024.",
+            "answer2": "Seremonien og mottakelsen vil bli holdt på Solstrand Hotel & Bad, som ligger ved fjorden med fantastisk utsikt.",
+            "answer3": "Kleskoden er formell, så vi anbefaler smoking for herrer og lange kjoler for damer."
+        }
     }
 }
