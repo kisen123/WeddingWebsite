@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./QBlock.scss";
 import { ABlock } from "./ABlock.tsx";
 
-export function QBlock({ question, answer }: { question: string; answer: string }) {
+export function QBlock({ question, answerKey }: { question: string; answerKey: string }) {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
@@ -23,7 +23,7 @@ export function QBlock({ question, answer }: { question: string; answer: string 
                     </svg>
                 </span>
             </div>
-            <ABlock answer={answer} isOpen={isOpen} />
+            <ABlock answerKey={answerKey} isOpen={isOpen} />
         </div>
     );
 }
