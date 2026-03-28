@@ -9,8 +9,9 @@ export function QaSection() {
         <div className="qaSectionContents">
             <section className="qaSection">
                 <h2 className="qaSection__title">{t('qaSection.title')}</h2>
-                <p>{t('qaSection.description')}</p>
-                <QBlock />
+                <QBlock question={t('qaSection.questions.question1')} answer={t('qaSection.answers.answer1')} />
+                <QBlock question={t('qaSection.questions.question2')} answer={t('qaSection.answers.answer2')} />
+                <QBlock question={t('qaSection.questions.question3')} answer={t('qaSection.answers.answer3')} />
             </section>
         </div>
 

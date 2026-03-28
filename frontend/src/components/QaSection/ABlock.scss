@@ -1,0 +1,35 @@
+.answerBlock {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-rows: 0fr;
+    opacity: 0;
+    transform: translateY(-0.85rem);
+    margin-top: -0.6rem;
+    background-color: #ffd781;
+    border-radius: 0 0 5px 5px;
+    overflow: hidden;
+    pointer-events: none;
+    transition:
+        grid-template-rows 0.3s ease,
+        opacity 0.25s ease,
+        transform 0.3s ease;
+
+    &__text {
+        font-size: 2rem;
+        overflow: hidden;
+        padding: 0 1rem;
+        transition: padding 0.3s ease;
+    }
+
+    &--open {
+        grid-template-rows: 1fr;
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
+
+    &--open .answerBlock__text {
+        padding: 1.2rem 1rem 1rem;
+    }
+}
