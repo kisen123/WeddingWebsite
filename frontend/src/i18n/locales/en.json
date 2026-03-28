@@ -3,7 +3,8 @@
         "home": "Home",
         "info": "Info",
         "rsvp": "RSVP",
-        "contact": "Contact"
+        "contact": "Contact",
+        "qA": "Questions and answers"
     },
     "home": {
         "welcome": "Welcome to our wedding website!"
@@ -25,5 +26,15 @@
     },
     "contact": {
         "title": "Contact"
+    },
+    "qaSection": {
+        "title": "Questions and answers",
+        "description": "Here you will find answers to common questions about the wedding.",
+        "loadingAnswer": "Loading answer...",
+        "answerError": "Could not load the answer right now.",
+        "questions": {
+            "gifts": "Do you have a gift registry?",
+            "housing": "Where can we stay?"
+        }
     }
 }

@@ -20,6 +20,31 @@
         overflow: hidden;
         padding: 0 1rem;
         transition: padding 0.3s ease;
+
+        p,
+        ul,
+        ol {
+            margin: 0;
+        }
+
+        p + p,
+        p + ul,
+        p + ol,
+        ul + p,
+        ol + p,
+        ul + ul,
+        ol + ol {
+            margin-top: 0.75rem;
+        }
+
+        ul,
+        ol {
+            padding-left: 1.5rem;
+        }
+
+        li + li {
+            margin-top: 0.35rem;
+        }
     }
 
     &--open {
