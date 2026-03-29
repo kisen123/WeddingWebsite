@@ -1,44 +1,44 @@
 {
-    "nav": {
-        "home": "Hjem",
-        "info": "Info",
-        "rsvp": "RSVP",
-        "contact": "Kontakt",
-        "qA": "Spørsmål og svar"
-    },
-    "home": {
-        "welcome": "Velkommen til bryllupssiden vår!"
-    },
-    "info": {
-        "title": "Info",
-        "loading": "Laster...",
-        "error": "Kunne ikke laste bryllupsinfo."
-    },
-    "rsvp": {
-        "title": "RSVP",
-        "name": "Navn",
-        "email": "E-post",
-        "attending": "Deltar",
-        "dietaryRequirements": "Kostholdsbehov",
-        "songRequest": "Sangønske",
-        "submit": "Jeg deltar!",
-        "error": "Noe gikk galt."
-    },
-    "contact": {
-        "title": "Kontakt"
-    },
-    "qaSection": {
-        "title": "Spørsmål og svar",
-        "description": "Her finner du svar på ofte stilte spørsmål om bryllupet.",
-        "loadingAnswer": "Laster svar...",
-        "answerError": "Kunne ikke laste svaret akkurat nå.",
-        "questions": {
-            "housing": "Overnattingsmuligheter",
-            "gifts": "Har dere en ønskeliste?",
-            "transport": "Transport",
-            "dressCode": "Kleskode",
-            "usefulLinks": "Nyttige lenker",
-            "children": "Barn"
-        }
+  "nav": {
+    "home": "Hjem",
+    "info": "Info",
+    "rsvp": "RSVP",
+    "contact": "Kontakt",
+    "qA": "Spørsmål og svar"
+  },
+  "home": {
+    "welcome": "Velkommen til bryllupssiden vår!"
+  },
+  "info": {
+    "title": "Info",
+    "loading": "Laster...",
+    "error": "Kunne ikke laste bryllupsinfo."
+  },
+  "rsvp": {
+    "title": "RSVP",
+    "name": "Navn",
+    "email": "E-post",
+    "attending": "Deltar",
+    "dietaryRequirements": "Kostholdsbehov",
+    "songRequest": "Sangønske",
+    "submit": "Jeg deltar!",
+    "error": "Noe gikk galt."
+  },
+  "contact": {
+    "title": "Kontakt"
+  },
+  "qaSection": {
+    "title": "Spørsmål og svar",
+    "description": "Her finner du svar på ofte stilte spørsmål om bryllupet.",
+    "loadingAnswer": "Laster svar...",
+    "answerError": "Kunne ikke laste svaret akkurat nå.",
+    "questions": {
+      "housing": "Overnattingsmuligheter",
+      "gifts": "Har dere en ønskeliste?",
+      "transport": "Transport",
+      "dressCode": "Kleskode",
+      "usefulLinks": "Nyttige lenker",
+      "children": "Barn"
     }
+  }
 }

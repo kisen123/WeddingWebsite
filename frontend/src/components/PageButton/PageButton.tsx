@@ -1,22 +1,23 @@
-import { useState } from "react";
-import { Link } from "react-router";
-import "./PageButton.scss";
+import './PageButton.scss';
 
-export function PageButton({ text, to }: { text: string, to: string }) {
-    const [clicking, setClicking] = useState(false);
+import { useState } from 'react';
+import { Link } from 'react-router';
 
-    function handleClick() {
-        setClicking(true);
-        setTimeout(() => setClicking(false), 80);
-    }
+export function PageButton({ text, to }: { text: string; to: string }) {
+  const [clicking, setClicking] = useState(false);
 
-    return (
-        <Link
-            className={`page-button${clicking ? " page-button--clicking" : ""}`}
-            to={to}
-            onClick={handleClick}
-        >
-            {text}
-        </Link>
-    );
+  function handleClick() {
+    setClicking(true);
+    setTimeout(() => setClicking(false), 80);
+  }
+
+  return (
+    <Link
+      className={`page-button${clicking ? ' page-button--clicking' : ''}`}
+      to={to}
+      onClick={handleClick}
+    >
+      {text}
+    </Link>
+  );
 }

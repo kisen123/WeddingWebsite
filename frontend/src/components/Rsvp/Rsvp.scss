@@ -1,21 +1,18 @@
 .rsvpContents {
-    display: flex;
-    justify-content: center;
-    padding: 2rem;
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
 }
 
-
-
 .rsvp {
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-
-    &__title {
-        font-size: 5rem;
-        margin-top: 2rem;
-        margin-bottom: 6rem;
-    }
+  &__title {
+    font-size: 5rem;
+    margin-top: 2rem;
+    margin-bottom: 6rem;
+  }
 }

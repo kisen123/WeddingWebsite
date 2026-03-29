@@ -1,40 +1,40 @@
 {
-    "nav": {
-        "home": "Home",
-        "info": "Info",
-        "rsvp": "RSVP",
-        "contact": "Contact",
-        "qA": "Questions and answers"
-    },
-    "home": {
-        "welcome": "Welcome to our wedding website!"
-    },
-    "info": {
-        "title": "Info",
-        "loading": "Loading...",
-        "error": "Could not load wedding info."
-    },
-    "rsvp": {
-        "title": "RSVP",
-        "name": "Name",
-        "email": "Email",
-        "attending": "Attending",
-        "dietaryRequirements": "Dietary requirements",
-        "songRequest": "Song request",
-        "submit": "Send RSVP",
-        "error": "Something went wrong."
-    },
-    "contact": {
-        "title": "Contact"
-    },
-    "qaSection": {
-        "title": "Questions and answers",
-        "description": "Here you will find answers to common questions about the wedding.",
-        "loadingAnswer": "Loading answer...",
-        "answerError": "Could not load the answer right now.",
-        "questions": {
-            "gifts": "Do you have a gift registry?",
-            "housing": "Where can we stay?"
-        }
+  "nav": {
+    "home": "Home",
+    "info": "Info",
+    "rsvp": "RSVP",
+    "contact": "Contact",
+    "qA": "Questions and answers"
+  },
+  "home": {
+    "welcome": "Welcome to our wedding website!"
+  },
+  "info": {
+    "title": "Info",
+    "loading": "Loading...",
+    "error": "Could not load wedding info."
+  },
+  "rsvp": {
+    "title": "RSVP",
+    "name": "Name",
+    "email": "Email",
+    "attending": "Attending",
+    "dietaryRequirements": "Dietary requirements",
+    "songRequest": "Song request",
+    "submit": "Send RSVP",
+    "error": "Something went wrong."
+  },
+  "contact": {
+    "title": "Contact"
+  },
+  "qaSection": {
+    "title": "Questions and answers",
+    "description": "Here you will find answers to common questions about the wedding.",
+    "loadingAnswer": "Loading answer...",
+    "answerError": "Could not load the answer right now.",
+    "questions": {
+      "gifts": "Do you have a gift registry?",
+      "housing": "Where can we stay?"
     }
+  }
 }

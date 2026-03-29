@@ -1,4 +1,4 @@
 export type QaItem = {
-    questionKey: string;
-    answerKey: string;
+  questionKey: string;
+  answerKey: string;
 };

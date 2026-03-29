@@ -1,13 +1,9 @@
-
-
-import { Rsvp } from "../components/Rsvp/Rsvp.tsx";
+import { Rsvp } from '../components/Rsvp/Rsvp.tsx';
 
 export function RsvpPage() {
-
-
-    return (
-        <>
-            <Rsvp />
-        </>
-    );
+  return (
+    <>
+      <Rsvp />
+    </>
+  );
 }
