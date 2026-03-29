@@ -5,6 +5,7 @@ import { InfoPage } from "./pages/InfoPage.tsx";
 import { RsvpPage } from "./pages/RsvpPage.tsx";
 import { ContactPage } from "./pages/ContactPage.tsx";
 import { QaPage } from "./pages/QaPage.tsx";
+import "./App.scss";
 
 export default function App() {
   return (

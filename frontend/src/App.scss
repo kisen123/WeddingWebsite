@@ -1,5 +1,28 @@
+html,
+body,
+#root {
+    min-height: 100%;
+}
+
+body {
+    margin: 0;
+}
+
 .wedding-app {
-    display: flex;
-    flex-direction: column;
+    position: relative;
     min-height: 100vh;
+    isolation: isolate;
+}
+
+.wedding-app::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background-image: url("./assets/kajaogkristian.jpeg");
+    background-size: cover;
+    background-position: 0% -20%;
+    background-repeat: no-repeat;
+    filter: grayscale(30%);
+    opacity: 0.35;
 }
