@@ -18,8 +18,11 @@
     transform 0.3s ease;
 
   &__text {
+    min-width: 0;
     font-size: 2rem;
     overflow: hidden;
+    overflow-wrap: anywhere;
+    word-break: break-word;
     padding: 0 1rem;
     transition: padding 0.3s ease;
 

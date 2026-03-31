@@ -1,6 +1,8 @@
 .qaSection__block {
   position: relative;
-  width: 800px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
   flex: 0 0 auto;
 }
 

@@ -1,10 +1,15 @@
 .qaSectionContents {
   display: flex;
   justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
   padding: 2rem;
 }
 
 .qaSection {
+  width: min(800px, 100%);
+  max-width: 100%;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
