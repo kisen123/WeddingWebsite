@@ -1,7 +1,7 @@
 import './PageButton.scss';
 
 import { useState } from 'react';
-import { Link } from 'react-router';
+import { NavLink } from 'react-router';
 
 export function PageButton({ text, to }: { text: string; to: string }) {
   const [clicking, setClicking] = useState(false);
@@ -12,12 +12,21 @@ export function PageButton({ text, to }: { text: string; to: string }) {
   }
 
   return (
-    <Link
-      className={`page-button${clicking ? ' page-button--clicking' : ''}`}
+    <NavLink
+      className={({ isActive }) =>
+        [
+          'page-button',
+          clicking && 'page-button--clicking',
+          isActive ? 'page-button--active' : 'page-button--inactive',
+        ]
+          .filter(Boolean)
+          .join(' ')
+      }
       to={to}
       onClick={handleClick}
+      end={to === '/'}
     >
       {text}
-    </Link>
+    </NavLink>
   );
 }
