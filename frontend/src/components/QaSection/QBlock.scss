@@ -1,5 +1,7 @@
 .qaSection__block {
   position: relative;
+  width: 800px;
+  flex: 0 0 auto;
 }
 
 .qBlockClickable {
@@ -11,7 +13,8 @@
   background-color: #d8c68c;
   padding: 1rem;
   border-radius: 8px;
-  min-width: 800px;
+  width: 100%;
+  box-sizing: border-box;
   cursor: pointer;
   transition: background-color 0.3s ease;
   margin-top: 3rem;
