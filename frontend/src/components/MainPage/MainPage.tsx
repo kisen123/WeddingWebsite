@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
-import { getWeddingInfo, submitRsvp } from "../../api.ts";
+import React, { useEffect, useState } from 'react';
+
+import { getWeddingInfo, submitRsvp } from '../../api.ts';
 
 type WeddingInfo = {
   couple: string;
@@ -9,27 +10,26 @@ type WeddingInfo = {
 };
 
 export function MainPage() {
-
   const [info, setInfo] = useState<WeddingInfo | null>(null);
   const [loading, setLoading] = useState(true);
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState('');
 
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
   const [attending, setAttending] = useState(true);
-  const [dietaryRequirements, setDietaryRequirements] = useState("");
-  const [songRequest, setSongRequest] = useState("");
+  const [dietaryRequirements, setDietaryRequirements] = useState('');
+  const [songRequest, setSongRequest] = useState('');
 
   useEffect(() => {
     getWeddingInfo()
       .then(setInfo)
-      .catch(() => setMessage("Could not load wedding info."))
+      .catch(() => setMessage('Could not load wedding info.'))
       .finally(() => setLoading(false));
   }, []);
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setMessage("");
+    setMessage('');
 
     try {
       const result = await submitRsvp({
@@ -41,21 +41,20 @@ export function MainPage() {
       });
 
       setMessage(result.message);
-      setName("");
-      setEmail("");
+      setName('');
+      setEmail('');
       setAttending(true);
-      setDietaryRequirements("");
-      setSongRequest("");
+      setDietaryRequirements('');
+      setSongRequest('');
     } catch (error) {
-      setMessage(error instanceof Error ? error.message : "Something went wrong.");
+      setMessage(
+        error instanceof Error ? error.message : 'Something went wrong.',
+      );
     }
   }
 
-
-    return (
-        <main className="main-page">
-      
-
+  return (
+    <main className="main-page">
       {loading && <p>Loading...</p>}
 
       {info && (
@@ -68,12 +67,15 @@ export function MainPage() {
         </section>
       )}
 
-      <hr style={{ margin: "2rem 0" }} />
+      <hr style={{ margin: '2rem 0' }} />
 
       <section id="rsvp">
         <h2>RSVP</h2>
 
-        <form onSubmit={handleSubmit} style={{ display: "grid", gap: "0.75rem" }}>
+        <form
+          onSubmit={handleSubmit}
+          style={{ display: 'grid', gap: '0.75rem' }}
+        >
           <input
             placeholder="Name"
             value={name}
@@ -111,8 +113,8 @@ export function MainPage() {
           <button type="submit">Send RSVP</button>
         </form>
 
-        {message && <p style={{ marginTop: "1rem" }}>{message}</p>}
+        {message && <p style={{ marginTop: '1rem' }}>{message}</p>}
       </section>
     </main>
-    )
+  );
 }
