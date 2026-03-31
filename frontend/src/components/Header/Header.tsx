@@ -3,13 +3,11 @@ import './Header.scss';
 import { useTranslation } from 'react-i18next';
 
 import { PageButton } from '../PageButton/PageButton';
-import { MistletoeDecor } from './MistletoeDecor';
 
 export function Header() {
   const { t } = useTranslation();
   return (
     <header className="header">
-      <MistletoeDecor />
       <div className="header__names">
         <h1 className="header__groom">Kristian</h1>
         <span>&</span>
