@@ -3,6 +3,7 @@ import './ABlock.scss';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import ReactMarkdown from 'react-markdown';
+import rehypeRaw from 'rehype-raw';
 
 import { loadQaAnswer } from '../../helpers/qaContent';
 
@@ -56,7 +57,7 @@ export function ABlock({
         ) : isLoading ? (
           <p>{t('qaSection.loadingAnswer')}</p>
         ) : (
-          <ReactMarkdown>{markdown}</ReactMarkdown>
+          <ReactMarkdown rehypePlugins={[rehypeRaw]}>{markdown}</ReactMarkdown>
         )}
       </div>
     </div>

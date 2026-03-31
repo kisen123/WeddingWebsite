@@ -2,12 +2,14 @@
   position: relative;
   z-index: 1;
   display: grid;
+  width: 100%;
   grid-template-rows: 0fr;
   opacity: 0;
   transform: translateY(-0.85rem);
   margin-top: -0.6rem;
-  background-color: #ffd781;
+  background-color: #ffecc4ce;
   border-radius: 0 0 5px 5px;
+  box-sizing: border-box;
   overflow: hidden;
   pointer-events: none;
   transition:
@@ -16,8 +18,13 @@
     transform 0.3s ease;
 
   &__text {
-    font-size: 2rem;
+    min-width: 0;
+    font-family: Cormorant Garamond;
+    font-size: 1.5rem;
+    font-weight: 600;
     overflow: hidden;
+    overflow-wrap: anywhere;
+    word-break: break-word;
     padding: 0 1rem;
     transition: padding 0.3s ease;
 

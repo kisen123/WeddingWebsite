@@ -1,5 +1,9 @@
 .qaSection__block {
   position: relative;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  flex: 0 0 auto;
 }
 
 .qBlockClickable {
@@ -11,7 +15,8 @@
   background-color: #d8c68c;
   padding: 1rem;
   border-radius: 8px;
-  min-width: 800px;
+  width: 100%;
+  box-sizing: border-box;
   cursor: pointer;
   transition: background-color 0.3s ease;
   margin-top: 3rem;
@@ -50,4 +55,5 @@
 
 .question {
   margin: 0.2rem 1rem;
+  font-family: Cormorant Garamond;
 }
