@@ -27,6 +27,13 @@
   "contact": {
     "title": "Contact"
   },
+  "countdown": {
+    "label": "Count down with us!",
+    "days": "Days",
+    "hours": "Hours",
+    "minutes": "Minutes",
+    "seconds": "Seconds"
+  },
   "qaSection": {
     "title": "Questions and answers",
     "description": "Here you will find answers to common questions about the wedding.",

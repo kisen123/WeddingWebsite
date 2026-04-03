@@ -27,6 +27,13 @@
   "contact": {
     "title": "Kontakt"
   },
+  "countdown": {
+    "label": "Tell ned med oss!",
+    "days": "Dager",
+    "hours": "Timer",
+    "minutes": "Minutter",
+    "seconds": "Sekunder"
+  },
   "qaSection": {
     "title": "Spørsmål og svar",
     "description": "Her finner du svar på ofte stilte spørsmål om bryllupet.",
@@ -40,5 +47,8 @@
       "usefulLinks": "Nyttige lenker",
       "children": "Barn"
     }
+  },
+  "areGettingMarried": {
+    "title": "SKAL GIFTE SEG"
   }
 }

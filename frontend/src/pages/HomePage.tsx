@@ -1,17 +1,5 @@
-import { useTranslation } from 'react-i18next';
+import { MainPage } from '../components/MainPage/MainPage.tsx';
 
 export function HomePage() {
-  const { t } = useTranslation();
-  return (
-    <section>
-      <h2>{t('home.welcome')}</h2>
-      <h2>{t('home.welcome')}</h2>
-      <h2>{t('home.welcome')}</h2>
-      <h2>{t('home.welcome')}</h2>
-      <h2>{t('home.welcome')}</h2>
-      <h2>{t('home.welcome')}</h2>
-      <h2>{t('home.welcome')}</h2>
-      <h2>{t('home.welcome')}</h2>
-    </section>
-  );
+  return <MainPage />;
 }

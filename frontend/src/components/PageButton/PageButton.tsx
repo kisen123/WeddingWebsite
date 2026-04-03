@@ -1,32 +1,36 @@
 import './PageButton.scss';
 
 import { useState } from 'react';
-import { NavLink } from 'react-router';
 
-export function PageButton({ text, to }: { text: string; to: string }) {
+export function PageButton({
+  text,
+  isActive,
+  onClick,
+}: {
+  text: string;
+  isActive: boolean;
+  onClick: () => void;
+}) {
   const [clicking, setClicking] = useState(false);
 
   function handleClick() {
     setClicking(true);
     setTimeout(() => setClicking(false), 80);
+    onClick();
   }
 
   return (
-    <NavLink
-      className={({ isActive }) =>
-        [
-          'page-button',
-          clicking && 'page-button--clicking',
-          isActive ? 'page-button--active' : 'page-button--inactive',
-        ]
-          .filter(Boolean)
-          .join(' ')
-      }
-      to={to}
+    <button
+      className={[
+        'page-button',
+        clicking && 'page-button--clicking',
+        isActive ? 'page-button--active' : 'page-button--inactive',
+      ]
+        .filter(Boolean)
+        .join(' ')}
       onClick={handleClick}
-      end={to === '/'}
     >
       {text}
-    </NavLink>
+    </button>
   );
 }

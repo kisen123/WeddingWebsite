@@ -6,6 +6,7 @@ body,
 
 body {
   margin: 0;
+  overflow-y: scroll;
 }
 
 .wedding-app {
@@ -19,10 +20,6 @@ body {
   position: fixed;
   inset: 0;
   z-index: -1;
-  background-image: url('./assets/kajaogkristian.jpeg');
-  background-size: cover;
-  background-position: 0% -20%;
-  background-repeat: no-repeat;
   filter: grayscale(30%);
   opacity: 0.35;
 }
