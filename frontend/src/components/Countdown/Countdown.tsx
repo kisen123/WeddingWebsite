@@ -44,7 +44,9 @@ export function Countdown() {
       <div className="countdown__units">
         {units.map(({ label, value }) => (
           <div key={label} className="countdown__unit">
-            <span className="countdown__value">{String(value).padStart(2, '0')}</span>
+            <span className="countdown__value">
+              {String(value).padStart(2, '0')}
+            </span>
             <span className="countdown__unit-label">{label}</span>
           </div>
         ))}
