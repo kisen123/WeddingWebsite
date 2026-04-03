@@ -17,7 +17,7 @@ export function WeAreGettingMarried() {
         <h1 className="wagm__bride">Kaja</h1>
       </div>
 
-      <h1>{t('areGettingMarried.title')}</h1>
+      <h1 className="wagm__title">{t('areGettingMarried.title')}</h1>
     </section>
   );
 }

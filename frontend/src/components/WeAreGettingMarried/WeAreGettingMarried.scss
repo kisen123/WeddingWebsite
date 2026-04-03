@@ -8,18 +8,21 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
   }
 
   &__date {
-    font-size: 0.95rem;
+    font-size: 70px;
     font-family: 'Dancing Script', cursive;
     letter-spacing: 0.03em;
+    margin: 100px 100px 100px 100px;
   }
 
   &__place {
-    font-size: 0.95rem;
+    font-size: 50px;
     font-family: 'Dancing Script', cursive;
     letter-spacing: 0.03em;
+    margin: 100px 100px 100px 100px;
   }
 
   &__names {
@@ -47,6 +50,12 @@
     animation-delay: 0.4s;
     clip-path: inset(0 100% 0 0);
     opacity: 0;
+  }
+
+  &__title {
+    font-size: 3fr;
+    font-family: 'Times New Roman', Times, serif;
+    letter-spacing: 0.03em;
   }
 }
 
