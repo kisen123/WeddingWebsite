@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 
 import { PageButton } from '../PageButton/PageButton';
 
-const SECTIONS = ['home', 'info', 'rsvp', 'contact', 'qa'] as const;
+const SECTIONS = ['home', 'program', 'rsvp', 'contact', 'qa'] as const;
 type SectionId = (typeof SECTIONS)[number];
 
 function scrollToSection(id: SectionId) {
@@ -45,9 +45,9 @@ export function Header() {
           onClick={() => scrollToSection('home')}
         />
         <PageButton
-          text={t('nav.info')}
-          isActive={activeSection === 'info'}
-          onClick={() => scrollToSection('info')}
+          text={t('nav.program')}
+          isActive={activeSection === 'program'}
+          onClick={() => scrollToSection('program')}
         />
         <PageButton
           text={t('nav.rsvp')}

@@ -1,7 +1,7 @@
 const API_BASE_URL =
   import.meta.env.VITE_API_BASE_URL ?? 'http://localhost:5050';
 
-export type WeddingInfo = {
+export type WeddingProgram = {
   couple: string;
   date: string;
   venue: string;
@@ -16,11 +16,11 @@ export type RsvpPayload = {
   songRequest?: string;
 };
 
-export async function getWeddingInfo(): Promise<WeddingInfo> {
-  const response = await fetch(`${API_BASE_URL}/api/info`);
+export async function getWeddingProgram(): Promise<WeddingProgram> {
+  const response = await fetch(`${API_BASE_URL}/api/program`);
 
   if (!response.ok) {
-    throw new Error('Failed to fetch wedding info.');
+    throw new Error('Failed to fetch wedding program.');
   }
 
   return response.json();
