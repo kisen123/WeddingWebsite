@@ -1,7 +1,7 @@
 {
   "nav": {
     "home": "Hjem",
-    "info": "Info",
+    "program": "Program",
     "rsvp": "RSVP",
     "contact": "Kontakt",
     "qA": "Spørsmål og svar"
@@ -9,10 +9,10 @@
   "home": {
     "welcome": "Velkommen til bryllupssiden vår!"
   },
-  "info": {
-    "title": "Info",
+  "program": {
+    "title": "Program",
     "loading": "Laster...",
-    "error": "Kunne ikke laste bryllupsinfo."
+    "error": "Kunne ikke laste bryllupsprogram."
   },
   "rsvp": {
     "title": "RSVP",

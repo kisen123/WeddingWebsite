@@ -1,5 +1,5 @@
 import { ContactPage } from '../../pages/ContactPage.tsx';
-import { InfoPage } from '../../pages/InfoPage.tsx';
+import { ProgramPage } from '../../pages/ProgramPage.tsx';
 import { QaPage } from '../../pages/QaPage.tsx';
 import { RsvpPage } from '../../pages/RsvpPage.tsx';
 import { WeAreGettingMarried } from '../WeAreGettingMarried/WeAreGettingMarried.tsx';
@@ -10,8 +10,8 @@ export function MainPage() {
       <section id="home">
         <WeAreGettingMarried />
       </section>
-      <section id="info">
-        <InfoPage />
+      <section id="program">
+        <ProgramPage />
       </section>
       <section id="rsvp">
         <RsvpPage />
