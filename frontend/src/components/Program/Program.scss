@@ -1,25 +1,46 @@
 .programLayout {
   display: flex;
   align-items: flex-start;
+  gap: clamp(1rem, 5vw, 3rem);
 }
 
 .programDiv {
   flex: 1;
-  margin-top: 40px;
-  margin-left: 80px;
+  min-width: 0;
+  margin-top: clamp(2rem, 6vw, 2.5rem);
+  margin-left: clamp(0rem, 8vw, 5rem);
 }
 
 .programFlower {
-  width: 300px;
+  width: min(35vw, 300px);
   object-fit: contain;
   padding: 16px;
+  box-sizing: border-box;
 }
 
 .programTitle {
-  font-size: 3rem;
+  font-size: clamp(2.25rem, 8vw, 3rem);
 }
 
 .programDate {
-  font-size: 1.5rem;
+  font-size: clamp(1.2rem, 4vw, 1.5rem);
   font-family: 'Arial', sans-serif;
+}
+
+@media (max-width: 640px) {
+  .programLayout {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .programDiv {
+    width: 100%;
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .programFlower {
+    width: min(65vw, 220px);
+    padding: 0;
+  }
 }

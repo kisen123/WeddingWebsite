@@ -1,5 +1,9 @@
 .main-page {
-  max-width: 720px;
-  margin: 0 auto;
-  padding: 2rem;
+  width: 100%;
+  max-width: none;
+  box-sizing: border-box;
+}
+
+.main-page > section {
+  scroll-margin-top: calc(var(--header-height, 8rem) + 1rem);
 }

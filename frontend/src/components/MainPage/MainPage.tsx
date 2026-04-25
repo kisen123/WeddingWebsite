@@ -1,3 +1,5 @@
+import './MainPage.scss';
+
 import { ContactPage } from '../../pages/ContactPage.tsx';
 import { ProgramPage } from '../../pages/ProgramPage.tsx';
 import { QaPage } from '../../pages/QaPage.tsx';

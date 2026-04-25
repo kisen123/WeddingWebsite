@@ -1,9 +1,9 @@
 :root {
-  --header-height: 10rem;
+  --header-height: 7rem;
 }
 
 .header {
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -12,7 +12,9 @@
   flex-direction: column;
   align-items: flex-end;
   justify-content: space-between;
-  padding: 1rem 2rem;
+  min-height: var(--header-height);
+  padding: 1rem clamp(1rem, 4vw, 2rem);
+  box-sizing: border-box;
   background-color: #f0ead6;
 
   &__decor {
@@ -28,7 +30,10 @@
 
   &__nav {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
     gap: 4.5rem;
+    width: 100%;
 
     .page-button:nth-child(1) {
       animation-delay: 0.3s;
@@ -44,6 +49,21 @@
     }
     .page-button:nth-child(5) {
       animation-delay: 0.7s;
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --header-height: 4.75rem;
+  }
+
+  .header {
+    padding-block: 0.75rem;
+
+    &__nav {
+      column-gap: 1.1rem;
+      row-gap: 0.4rem;
     }
   }
 }

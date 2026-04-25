@@ -1,7 +1,6 @@
 .rsvpFrame {
   position: relative;
-  width: min(92vw, 34rem);
-  min-height: min(132vw, 61.5rem);
+  width: min(100%, 34rem);
   aspect-ratio: 322.895 / 583.824;
   box-sizing: border-box;
   display: grid;
@@ -23,6 +22,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: clamp(4rem, 12vw, 5.5rem) clamp(2.25rem, 9vw, 4.5rem);
+    min-width: 0;
+    padding: clamp(3.25rem, 12vw, 5.5rem) clamp(1.75rem, 8vw, 4.5rem);
+  }
+}
+
+@media (max-width: 420px) {
+  .rsvpFrame {
+    width: min(100%, 23rem);
+
+    &__content {
+      padding: 3.1rem 1.55rem;
+    }
   }
 }

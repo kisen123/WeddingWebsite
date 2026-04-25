@@ -14,16 +14,27 @@ function scrollToSection(id: SectionId) {
 
 export function Header() {
   const { t } = useTranslation();
-  const [activeSection, setActiveSection] = useState<SectionId>('home');
+  const [activeSection, setActiveSection] = useState<SectionId | null>(null);
 
   useEffect(() => {
+    const visibleSections = new Set<SectionId>();
+
     const observer = new IntersectionObserver(
       (entries) => {
-        for (const entry of entries) {
+        entries.forEach((entry) => {
+          const sectionId = entry.target.id as SectionId;
+
           if (entry.isIntersecting) {
-            setActiveSection(entry.target.id as SectionId);
+            visibleSections.add(sectionId);
+          } else {
+            visibleSections.delete(sectionId);
           }
-        }
+        });
+
+        const nextActiveSection =
+          SECTIONS.find((id) => visibleSections.has(id)) ?? null;
+
+        setActiveSection(nextActiveSection);
       },
       { rootMargin: '-40% 0px -55% 0px', threshold: 0 },
     );

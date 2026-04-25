@@ -8,6 +8,8 @@
   font-size: 2rem;
   font-weight: 800;
   font-family: 'Oswald', cursive;
+  line-height: 1.1;
+  white-space: nowrap;
 
   color: #262626;
   filter: opacity(1);
@@ -41,7 +43,7 @@
   }
 
   &--active {
-    transform: scale(1.1);
+    transform: scale(1.06);
     font-weight: 900;
     color: #141414;
     filter: opacity(1);
@@ -58,6 +60,18 @@
   &--clicking {
     transform: scale(1);
     color: #363636;
+  }
+}
+
+@media (max-width: 640px) {
+  .page-button {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .page-button {
+    font-size: 1rem;
   }
 }
 
