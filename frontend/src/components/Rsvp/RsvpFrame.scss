@@ -1,0 +1,28 @@
+.rsvpFrame {
+  position: relative;
+  width: min(92vw, 34rem);
+  min-height: min(132vw, 61.5rem);
+  aspect-ratio: 322.895 / 583.824;
+  box-sizing: border-box;
+  display: grid;
+  isolation: isolate;
+
+  &__image {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    pointer-events: none;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(4rem, 12vw, 5.5rem) clamp(2.25rem, 9vw, 4.5rem);
+  }
+}

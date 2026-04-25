@@ -15,7 +15,8 @@
     "error": "Kunne ikke laste bryllupsprogram."
   },
   "rsvp": {
-    "title": "RSVP",
+    "title": "Kristian & Kaja",
+    "invitationText": "Vi inviterer deg til å feire vår bryllupsdag!",
     "name": "Navn",
     "email": "E-post",
     "attending": "Deltar",
