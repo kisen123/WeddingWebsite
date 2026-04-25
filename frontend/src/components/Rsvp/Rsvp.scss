@@ -1,7 +1,39 @@
 .rsvpContents {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   display: flex;
   justify-content: center;
   padding: clamp(1rem, 4vw, 2rem);
+  background-color: #ffffff;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  &::before {
+    background-image: url('../../assets/rsvpBackground.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    opacity: 0.3;
+  }
+
+  &::after {
+    background:
+      linear-gradient(to bottom, rgba(255, 255, 255, 1.3), transparent 8rem),
+      linear-gradient(to top, rgba(255, 255, 255, 1.3), transparent 8rem);
+  }
+
+  > .rsvpFrame {
+    position: relative;
+    z-index: 1;
+  }
 }
 
 .rsvp {
