@@ -22,7 +22,7 @@ export function Checkerboard({ columns, rows }: CheckerboardProps) {
           <div
             key={i}
             style={{
-              backgroundColor: isDark ? '#7a6d3e' : '#ffffff',
+              backgroundColor: isDark ? '#a2cffe' : '#ffffff',
               borderRadius: '5%',
               opacity: 0.4,
             }}

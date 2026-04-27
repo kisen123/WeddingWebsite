@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 
 // import type { WeddingProgram } from '../../api.ts';
 // import { getWeddingProgram } from '../../api.ts';
-import minimalistFlower from '../../assets/minimalistFlower.png';
+import programFlowers from '../../assets/programFlowers.png';
 import { Checkerboard } from '../Checkerboard/Checkerboard.tsx';
 
 export function Program() {
@@ -54,7 +54,12 @@ export function Program() {
             <p className="programItem">Item 4</p>
           </div>
         </div>
-        <img src={minimalistFlower} alt="" className="programFlower" />
+        <img
+          width={300}
+          src={programFlowers}
+          alt=""
+          className="programFlower"
+        />
       </div>
     </section>
   );

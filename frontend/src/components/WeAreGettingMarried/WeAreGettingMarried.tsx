@@ -15,9 +15,9 @@ export function WeAreGettingMarried() {
         <div className="wagm__place">{WEDDING_PLACE}</div>
       </div>
       <div className="wagm__names">
-        <h1 className="wagm__groom">Kristian</h1>
-        <span>&</span>
         <h1 className="wagm__bride">Kaja</h1>
+        <span>&</span>
+        <h1 className="wagm__groom">Kristian</h1>
       </div>
 
       <h1 className="wagm__title">{t('areGettingMarried.title')}</h1>

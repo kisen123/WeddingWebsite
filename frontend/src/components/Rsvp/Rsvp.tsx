@@ -44,9 +44,9 @@ export function Rsvp() {
       <RsvpFrame>
         <section className="rsvp">
           <div className="rsvp__names">
-            <h1 className="rsvp__groom">Kristian</h1>
-            <span>&</span>
             <h1 className="rsvp__bride">Kaja</h1>
+            <span>&</span>
+            <h1 className="rsvp__groom">Kristian</h1>
           </div>
 
           <div className="rsvp__invitation_text">
