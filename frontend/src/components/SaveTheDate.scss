@@ -20,6 +20,10 @@
   &__STD {
     display: flex;
     justify-content: center;
+    font-family: 'Dancing Script', cursive;
+    font-weight: 500;
+    font-size: 3.5rem;
+    margin: 10px 0 10px 0;
   }
 
   &__names {
@@ -33,7 +37,75 @@
   }
 
   &__ampersand {
-    font-size: 1rem;
+    font-size: 1.4rem;
     margin: 0 20px 0 20px;
+  }
+
+  &__bride {
+    font-size: 2.5rem;
+  }
+
+  &__groom {
+    font-size: 2.5rem;
+  }
+
+  &__image-container {
+    width: 100%;
+    height: 40%;
+    overflow: hidden;
+  }
+
+  &__image {
+    width: 100%;
+    transform: translateY(-15%);
+  }
+
+  &__date_and_location {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__date {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.2rem;
+  }
+
+  &__more-info-to-come {
+    font-family: 'Bradley Hand ITC', cursive;
+    font-size: 1.2rem;
+    padding: 10px;
+  }
+
+  &__location-and-flag-container {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__flag {
+    height: 16px;
+    width: auto;
+  }
+
+  &__map-preview {
+    position: fixed;
+    z-index: 1000;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+
+    iframe {
+      display: block;
+      width: 260px;
+      height: 180px;
+      border: none;
+    }
   }
 }
