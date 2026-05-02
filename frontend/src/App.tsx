@@ -1,9 +1,11 @@
 import './App.scss';
 
+import SaveTheDate from './components/SaveTheDate';
+
 export default function App() {
   return (
-    <div className="wedding-app">
-      <p>Test</p>
-    </div>
+    <section className="wedding-app">
+      <SaveTheDate />
+    </section>
   );
 }

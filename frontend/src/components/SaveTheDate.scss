@@ -1,0 +1,39 @@
+.save-the-date {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  &__border {
+    width: 350px;
+    /* Match the SVG's native aspect ratio (viewBox="0 0 395 652") to avoid distortion */
+    aspect-ratio: 395 / 652;
+    padding: 25px;
+
+    /* This clips content */
+    overflow: hidden;
+
+    /* Use SVG as border/background, fills the container exactly */
+    background: url('../../assets/Border.svg') no-repeat center / 100% 100%;
+  }
+
+  &__STD {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__names {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Great Vibes', cursive;
+    font-size: 1.5rem;
+    color: #333;
+  }
+
+  &__ampersand {
+    font-size: 1rem;
+    margin: 0 20px 0 20px;
+  }
+}
