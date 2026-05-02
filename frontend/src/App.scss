@@ -1,32 +1,6 @@
 html,
-body,
-#root {
-  min-height: 100%;
-}
-
-html {
-  scroll-behavior: smooth;
-  overflow-x: hidden;
-}
-
 body {
+  height: 100%;
   margin: 0;
-  overflow-y: scroll;
-  overflow-x: hidden;
-}
-
-.wedding-app {
-  position: relative;
-  min-height: 100vh;
-  padding-top: var(--header-height, 7rem);
-  isolation: isolate;
-}
-
-.wedding-app::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  filter: grayscale(30%);
-  opacity: 0.35;
+  background-color: #ffdbea; /* your color */
 }
