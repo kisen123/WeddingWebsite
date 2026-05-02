@@ -33,6 +33,7 @@
     align-items: center;
     font-family: 'Great Vibes', cursive;
     font-size: 1.5rem;
+    line-height: 0.1;
     color: #333;
   }
 
@@ -73,7 +74,7 @@
   &__more-info-to-come {
     font-family: 'Bradley Hand ITC', cursive;
     font-size: 1.2rem;
-    padding: 10px;
+    padding: 30px 0 0 0;
   }
 
   &__location-and-flag-container {
