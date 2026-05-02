@@ -3,6 +3,9 @@ import './SaveTheDate.scss';
 import { useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 
+import norwayFlag from '../../assets/norway.png';
+import coupleImage from '../../assets/snupperne.jpeg';
+
 export default function SaveTheDate() {
   const [showMap, setShowMap] = useState(false);
   const [mapPos, setMapPos] = useState({ top: 0, left: 0 });
@@ -39,7 +42,7 @@ export default function SaveTheDate() {
 
         <div className="save-the-date__image-container">
           <img
-            src="../../assets/snupperne.jpeg"
+            src={coupleImage}
             alt="Save the Date"
             className="save-the-date__image"
           />
@@ -57,7 +60,7 @@ export default function SaveTheDate() {
           >
             <p className="save-the-date__location">Elgå, Norge</p>
             <img
-              src="../../assets/norway.png"
+              src={norwayFlag}
               alt="Norway flag"
               className="save-the-date__flag"
             />
