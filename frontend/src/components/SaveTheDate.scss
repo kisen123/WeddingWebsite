@@ -5,16 +5,16 @@
   height: 100vh;
 
   &__border {
-    width: 350px;
-    /* Match the SVG's native aspect ratio (viewBox="0 0 395 652") to avoid distortion */
-    aspect-ratio: 395 / 652;
-    padding: 25px;
+    /* Match the SVG's native aspect ratio (viewBox="0 0 1536 2304") to avoid distortion */
+    aspect-ratio: 1024 / 1536;
+    padding: 100px 40px 100px 40px;
 
     /* This clips content */
     overflow: hidden;
 
     /* Use SVG as border/background, fills the container exactly */
-    background: url('../../assets/Border.svg') no-repeat center / 100% 100%;
+    background: url('../../assets/wavy_border_thinner.svg') no-repeat center /
+      100% 100%;
   }
 
   &__STD {
@@ -22,7 +22,7 @@
     justify-content: center;
     font-family: 'Dancing Script', cursive;
     font-weight: 500;
-    font-size: 3.5rem;
+    font-size: 3rem;
     margin: 10px 0 10px 0;
   }
 
