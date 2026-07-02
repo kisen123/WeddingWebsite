@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'Gravity Handwritten';
+  src: url('../../assets/gravity_handwritten.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .save-the-date {
   display: flex;
   justify-content: center;
@@ -20,10 +27,12 @@
   &__STD {
     display: flex;
     justify-content: center;
-    font-family: 'Dancing Script', cursive;
-    font-weight: 500;
-    font-size: 3rem;
-    margin: 10px 0 10px 0;
+    font-family: 'Gravity Handwritten', cursive;
+    font-weight: normal;
+    -webkit-text-stroke: 0.9px currentColor;
+    font-size: 5.5rem;
+    word-spacing: 0.2em;
+    margin: 0 0 0 0;
   }
 
   &__names {
@@ -31,23 +40,26 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    font-family: 'Great Vibes', cursive;
+    font-family: 'Bebas Neue';
     font-size: 1.5rem;
     line-height: 0.1;
     color: #333;
+    margin: 10px 0 10px 0;
   }
 
   &__ampersand {
     font-size: 1.4rem;
-    margin: 0 20px 0 20px;
+    margin: 0 20px;
   }
 
   &__bride {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
+    margin: 0;
   }
 
   &__groom {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
+    margin: 0;
   }
 
   &__image-container {

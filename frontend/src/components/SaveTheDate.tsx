@@ -32,7 +32,7 @@ export default function SaveTheDate() {
   return (
     <div className="save-the-date">
       <div className="save-the-date__border">
-        <p className="save-the-date__STD">Sett av datoen!</p>
+        <p className="save-the-date__STD">Sett av datoen</p>
 
         <div className="save-the-date__names">
           <p className="save-the-date__bride">Kaja</p>
