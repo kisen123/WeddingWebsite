@@ -29,10 +29,20 @@ type PhotoStyle = CSSProperties & {
   '--photo-y': string;
 };
 
-const inlineBorderMarkup = wavyBorderMarkup.replace(
-  '<svg ',
-  '<svg class="save-the-date__border-svg" ',
-);
+const BORDER_THINNING_RADIUS = 3.5;
+const borderThinningFilter = `
+  <filter id="wavy-border-thinning" x="-10%" y="-10%" width="120%" height="120%">
+    <feMorphology
+      in="SourceGraphic"
+      operator="erode"
+      radius="${BORDER_THINNING_RADIUS}"
+    />
+  </filter>`;
+
+const inlineBorderMarkup = wavyBorderMarkup
+  .replace('<svg ', '<svg class="save-the-date__border-svg" ')
+  .replace('</defs>', `${borderThinningFilter}</defs>`)
+  .replace('<path ', '<path filter="url(#wavy-border-thinning)" ');
 
 function BowIcon() {
   return (
@@ -131,7 +141,7 @@ export default function SaveTheDate() {
           <header className="save-the-date__intro">
             <div className="save-the-date__eyebrow">
               <Decoration className="bow" name="bow" />
-              <p>Save the date</p>
+              <p>Vi gifter oss!</p>
               <Decoration className="sparkles-top" name="sparkles" />
             </div>
 
@@ -142,14 +152,14 @@ export default function SaveTheDate() {
               <span>Kristian</span>
             </h1>
 
-            <p className="save-the-date__script-title">Sett av dagen</p>
+            <p className="save-the-date__script-title">Hold av dagen!</p>
           </header>
 
           <PannablePhoto
             src={coupleImage}
             alt="Kaja og Kristian sammen"
-            x="50%"
-            y="20%"
+            x="20%"
+            y="25%"
             scale={1.04}
           />
 

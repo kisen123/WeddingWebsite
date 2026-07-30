@@ -88,20 +88,23 @@
   }
 
   &__names {
+    align-items: baseline;
     color: var(--ink-red);
-    display: grid;
-    font-family: Georgia, 'Times New Roman', serif;
+    column-gap: 0.2em;
+    display: flex;
+    font-family: 'Bebas Neue', serif;
     font-size: min(13.5cqw, 4.2rem);
-    font-weight: 600;
+    font-weight: 300;
+    justify-content: center;
     letter-spacing: 0.005em;
-    line-height: 0.92;
+    line-height: 1;
     margin: 0;
     min-width: 0;
     text-transform: uppercase;
+    white-space: nowrap;
     width: 100%;
 
     span {
-      display: block;
       white-space: nowrap;
     }
 
@@ -123,8 +126,10 @@
   &__script-title {
     font-size: min(8.5cqw, 2.65rem);
     line-height: 1;
+    letter-spacing: 0.05em;
     margin: 1cqw 0 0;
     transform: rotate(-3deg);
+    font-weight: 600;
   }
 
   &__photo-frame {
