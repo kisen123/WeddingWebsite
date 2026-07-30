@@ -181,7 +181,7 @@ export default function SaveTheDate() {
             <time className="save-the-date__date" dateTime="2027-08-28">
               28. august 2027
             </time>
-            <p className="save-the-date__more-info">Mer informasjon kommer!</p>
+            <p className="save-the-date__more-info">Mer informasjon kommer</p>
           </footer>
         </div>
       </article>

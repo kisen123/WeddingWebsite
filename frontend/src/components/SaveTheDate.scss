@@ -142,6 +142,7 @@
     min-width: 0;
     overflow: hidden;
     position: relative;
+    transform: translateY(-4cqw);
     width: 100%;
   }
 
@@ -188,11 +189,12 @@
   }
 
   &__more-info {
-    font-size: min(5.3cqw, 1.5rem);
+    font-size: min(9.3cqw, 4.5rem);
     letter-spacing: 0;
     margin: 2cqw 0 0;
     text-transform: none;
     transform: rotate(-2deg);
+    font-weight: 500;
   }
 
   &__decoration {
