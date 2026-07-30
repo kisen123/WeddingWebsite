@@ -213,12 +213,12 @@
   }
 
   &__more-info {
+    -webkit-text-stroke: 0.01em currentColor;
     font-size: min(9.3cqw, 4.5rem);
     letter-spacing: 0;
     margin: 2cqw 0 0;
     text-transform: none;
     transform: rotate(-2deg);
-    font-weight: 500;
   }
 
   &__decoration {

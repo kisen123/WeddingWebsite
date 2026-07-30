@@ -29,14 +29,30 @@ type PhotoStyle = CSSProperties & {
   '--photo-y': string;
 };
 
-const BORDER_THINNING_RADIUS = 3.5;
+const BORDER_THINNING_RADIUS = 4.5;
+const BORDER_EDGE_SMOOTHING = Math.min(
+  1.6,
+  Math.max(0.5, BORDER_THINNING_RADIUS * 0.18),
+);
+
 const borderThinningFilter = `
-  <filter id="wavy-border-thinning" x="-10%" y="-10%" width="120%" height="120%">
+  <filter
+    id="wavy-border-thinning"
+    x="-10%" y="-10%" width="120%" height="120%"
+    color-interpolation-filters="sRGB"
+  >
     <feMorphology
-      in="SourceGraphic"
+      in="SourceAlpha"
       operator="erode"
       radius="${BORDER_THINNING_RADIUS}"
+      result="eroded-alpha"
     />
+    <feGaussianBlur
+      in="eroded-alpha"
+      stdDeviation="${BORDER_EDGE_SMOOTHING.toFixed(2)}"
+      result="smoothed-alpha"
+    />
+    <feComposite in="SourceGraphic" in2="smoothed-alpha" operator="in" />
   </filter>`;
 
 const inlineBorderMarkup = wavyBorderMarkup
