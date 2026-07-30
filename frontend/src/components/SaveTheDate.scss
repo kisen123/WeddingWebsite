@@ -171,6 +171,14 @@
     text-transform: uppercase;
   }
 
+  &__location,
+  &__date {
+    align-items: center;
+    display: inline-flex;
+    gap: min(1.6cqw, 0.5rem);
+    justify-content: center;
+  }
+
   &__location {
     color: inherit;
     margin-block-end: 2cqw;
@@ -185,7 +193,23 @@
   }
 
   &__date {
+    -webkit-text-stroke: 0.025em currentColor;
+    font-weight: 900;
+    paint-order: stroke fill;
     white-space: nowrap;
+  }
+
+  &__detail-icon {
+    color: var(--accent-orange);
+    fill: none;
+    flex: 0 0 auto;
+    height: min(5cqw, 1.35rem);
+    overflow: visible;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.8;
+    width: min(5cqw, 1.35rem);
   }
 
   &__more-info {

@@ -68,6 +68,32 @@ function FlowerIcon() {
   );
 }
 
+function MapPinIcon() {
+  return (
+    <svg
+      className="save-the-date__detail-icon"
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+    >
+      <path d="M12 21s6-5.3 6-11a6 6 0 1 0-12 0c0 5.7 6 11 6 11Z" />
+      <circle cx="12" cy="10" r="2.2" />
+    </svg>
+  );
+}
+
+function CalendarIcon() {
+  return (
+    <svg
+      className="save-the-date__detail-icon"
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+    >
+      <rect x="3" y="5" width="18" height="16" rx="3" />
+      <path d="M8 3v4m8-4v4M3 10h18M8 14h.01m4 0h.01m4 0h.01M8 17.5h.01m4 0h.01" />
+    </svg>
+  );
+}
+
 const iconByName: Record<DecorationName, ReactNode> = {
   bow: <BowIcon />,
   flower: <FlowerIcon />,
@@ -176,10 +202,12 @@ export default function SaveTheDate() {
               onMouseEnter={handleLocationMouseEnter}
               onMouseLeave={handleMouseLeave}
             >
-              Elgå, Norge
+              <MapPinIcon />
+              <span>Elgå, Norge</span>
             </a>
             <time className="save-the-date__date" dateTime="2027-08-28">
-              28. august 2027
+              <CalendarIcon />
+              <span>28. august, 2027</span>
             </time>
             <p className="save-the-date__more-info">Mer informasjon kommer</p>
           </footer>
