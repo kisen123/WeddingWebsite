@@ -1,171 +1,273 @@
 @font-face {
   font-family: 'Gravity Handwritten';
   src: url('../../assets/gravity_handwritten.ttf') format('truetype');
-  font-weight: normal;
+  font-display: swap;
   font-style: normal;
+  font-weight: 400;
+}
+
+:root {
+  --cream: #fce9dc;
+  --ink-red: #a42b34;
+  --script-pink: #cf4778;
+  --accent-orange: #e7782f;
 }
 
 .save-the-date {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100dvh;
-  /* Small side padding on mobile so the wavy border isn't flush against the screen edge */
-  padding: 1rem 0.5rem;
   box-sizing: border-box;
+  display: grid;
+  min-height: 100dvh;
+  place-items: center;
+  padding: clamp(0.5rem, 2vw, 1.5rem);
+
+  &__card {
+    aspect-ratio: 2 / 3;
+    container-type: inline-size;
+    isolation: isolate;
+    margin: 0;
+    position: relative;
+    width: min(
+      calc(100vw - clamp(1rem, 4vw, 3rem)),
+      32rem,
+      calc((100dvh - clamp(1rem, 4vw, 3rem)) * 2 / 3)
+    );
+  }
+
+  &__border,
+  &__border-svg {
+    height: 100%;
+    inset: 0;
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+  }
 
   &__border {
-    /* Enable container queries so all cqw units below are relative to this card's width */
-    container-type: inline-size;
+    z-index: 0;
 
-    /*
-     * CARD SIZE — tweak these to resize the card.
-     * On mobile  : fills the screen width (minus 0.5rem side padding × 2).
-     * On desktop : capped by 90dvh × ratio so the card stays within the viewport height.
-     * Increase the multiplier (0.62) to allow a wider card on tall desktop screens.
-     */
-    width: min(calc(90dvh * 0.62), calc(100vw - 1rem));
-
-    /*
-     * INNER PADDING — tweak these % values (in cqw) to adjust
-     * how far content sits from the wavy border edge.
-     */
-    padding: 7cqw 6.5cqw;
-    box-sizing: border-box;
-
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-
-    /* SVG wavy border fills the container exactly */
-    background: url('../../assets/wavy_border_thinner.svg') no-repeat center /
-      100% 100%;
-  }
-
-  &__STD {
-    display: flex;
-    justify-content: center;
-    font-family: 'Gravity Handwritten', cursive;
-    font-weight: normal;
-    -webkit-text-stroke: 0.04em currentColor;
-    /* TITLE FONT SIZE — tweak this multiplier */
-    font-size: 14cqw;
-    word-spacing: 0.15em;
-    margin: 0;
-    line-height: 1;
-  }
-
-  &__names {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Bebas Neue', sans-serif;
-    color: #333;
-    /* NAMES SPACING — tweak vertical margin around names */
-    margin: 1.5cqw 0;
-    line-height: 1;
-  }
-
-  &__ampersand {
-    /* AMPERSAND SIZE & SPACING — tweak these */
-    font-size: 8cqw;
-    margin: 0 3.5cqw;
-  }
-
-  &__bride,
-  &__groom {
-    /* NAME FONT SIZE — tweak this multiplier */
-    font-size: 16cqw;
-    margin: 0;
-  }
-
-  &__image-container {
-    overflow: hidden;
-    /* IMAGE CORNER ROUNDING — tweak this */
-    border-radius: 3.5cqw;
-    /* IMAGE VERTICAL SPACING — tweak this */
-    margin: 1.5cqw 0;
-    /* IMAGE HEIGHT — tweak this to make the image taller or shorter */
-    height: 48cqw;
-    flex-shrink: 0;
-  }
-
-  &__image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    /*
-     * IMAGE CROP POSITION — tweak vertical % to pan the photo up/down.
-     * 0% = top, 50% = center, 100% = bottom.
-     */
-    object-position: center 15%;
-  }
-
-  &__date_and_location {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    /* DATE/LOCATION FONT SIZE — tweak this multiplier */
-    font-size: 4.8cqw;
-    gap: 2cqw;
-    /* Ensure neither text touches the wavy border edge */
-    padding: 0 1cqw;
-  }
-
-  &__date {
-    font-family: 'Dancing Script', cursive;
-    /* Dancing Script is wider than the location text — scale down slightly to prevent clipping */
-    font-size: 0.9em;
-    white-space: nowrap;
-  }
-
-  &__location {
-    white-space: nowrap;
-  }
-
-  &__more-info-to-come {
-    font-family: 'Dancing Script', cursive;
-    /* MORE-INFO FONT SIZE — tweak this multiplier */
-    font-size: 5cqw;
-    /* MORE-INFO TOP SPACING — tweak this */
-    padding-top: 2cqw;
-    /* Hot-pink color matching the wavy border */
-    color: #c8185f;
-  }
-
-  &__location-and-flag-container {
-    display: flex;
-    align-items: center;
-    /* FLAG GAP — tweak this */
-    gap: 1.5cqw;
-    text-decoration: none;
-    color: inherit;
-    cursor: pointer;
-
-    &:hover {
-      text-decoration: underline;
+    svg {
+      display: block;
+      overflow: visible;
     }
   }
 
-  &__flag {
-    /* FLAG SIZE — tweak this */
-    height: 4cqw;
-    width: auto;
+  &__content {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: minmax(0, 1.25fr) auto minmax(0, 0.6fr);
+    inset: 8.5% 13%;
+    position: absolute;
+    text-align: center;
+    z-index: 1;
+  }
+
+  &__intro {
+    align-content: center;
+    display: grid;
+    justify-items: center;
+    min-height: 0;
+  }
+
+  &__eyebrow {
+    align-items: center;
+    color: var(--ink-red);
+    display: grid;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: min(4cqw, 1.1rem);
+    font-weight: 700;
+    grid-template-columns: 1fr auto 1fr;
+    letter-spacing: 0.07em;
+    margin-block-end: 1cqw;
+    text-transform: uppercase;
+    width: 100%;
+
+    p {
+      margin: 0;
+      white-space: nowrap;
+    }
+  }
+
+  &__names {
+    color: var(--ink-red);
+    display: grid;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: min(13.5cqw, 4.2rem);
+    font-weight: 600;
+    letter-spacing: 0.005em;
+    line-height: 0.92;
+    margin: 0;
+    min-width: 0;
+    text-transform: uppercase;
+    width: 100%;
+
+    span {
+      display: block;
+      white-space: nowrap;
+    }
+
+    i {
+      font-size: 0.55em;
+      font-style: normal;
+      font-weight: 600;
+      vertical-align: 0.16em;
+    }
+  }
+
+  &__script-title,
+  &__more-info {
+    color: var(--script-pink);
+    font-family: 'Gravity Handwritten', cursive;
+    font-weight: 400;
+  }
+
+  &__script-title {
+    font-size: min(8.5cqw, 2.65rem);
+    line-height: 1;
+    margin: 1cqw 0 0;
+    transform: rotate(-3deg);
+  }
+
+  &__photo-frame {
+    align-self: center;
+    aspect-ratio: 1.55;
+    border-radius: 8cqw;
+    justify-self: center;
+    margin: 0;
+    max-width: 100%;
+    min-width: 0;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+  }
+
+  &__photo {
+    height: 100%;
+    inset: 0;
+    object-fit: cover;
+    object-position: var(--photo-x) var(--photo-y);
+    position: absolute;
+    transform: scale(var(--photo-scale));
+    transform-origin: var(--photo-x) var(--photo-y);
+    width: 100%;
+  }
+
+  &__details {
+    align-content: center;
+    color: var(--ink-red);
+    display: grid;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: min(4.2cqw, 1.15rem);
+    font-weight: 700;
+    justify-items: center;
+    letter-spacing: 0.025em;
+    line-height: 1.15;
+    position: relative;
+    text-transform: uppercase;
+  }
+
+  &__location {
+    color: inherit;
+    margin-block-end: 2cqw;
+    text-decoration: none;
+
+    &:focus-visible,
+    &:hover {
+      text-decoration: underline;
+      text-decoration-thickness: 0.08em;
+      text-underline-offset: 0.2em;
+    }
+  }
+
+  &__date {
+    white-space: nowrap;
+  }
+
+  &__more-info {
+    font-size: min(5.3cqw, 1.5rem);
+    letter-spacing: 0;
+    margin: 2cqw 0 0;
+    text-transform: none;
+    transform: rotate(-2deg);
+  }
+
+  &__decoration {
+    color: var(--accent-orange);
+    display: block;
+    position: absolute;
+
+    img,
+    svg {
+      display: block;
+      height: 100%;
+      width: 100%;
+    }
+
+    svg {
+      fill: none;
+      stroke: currentColor;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 2.4;
+    }
+
+    &--bow {
+      height: 8cqw;
+      left: 1cqw;
+      position: relative;
+      width: 12cqw;
+    }
+
+    &--sparkles-top {
+      height: 10cqw;
+      justify-self: end;
+      position: relative;
+      right: 1cqw;
+      width: 8cqw;
+    }
+
+    &--sparkles-bottom {
+      height: 13cqw;
+      left: 0;
+      top: 50%;
+      transform: translate(-18%, -42%) scale(0.8);
+      width: 10cqw;
+    }
+
+    &--flower {
+      height: 16cqw;
+      right: 0;
+      top: 50%;
+      transform: translate(10%, -48%);
+      width: 13cqw;
+    }
   }
 
   &__map-preview {
+    border-radius: 0.75rem;
+    box-shadow: 0 0.25rem 1rem rgb(68 32 23 / 25%);
+    overflow: hidden;
     position: fixed;
     z-index: 1000;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
 
     iframe {
+      border: 0;
       display: block;
-      width: 260px;
-      height: 180px;
-      border: none;
+      height: 11.25rem;
+      width: 16.25rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .save-the-date {
+    padding: 0.35rem;
+
+    &__card {
+      width: min(calc(100vw - 0.7rem), calc((100dvh - 0.7rem) * 2 / 3));
+    }
+
+    &__content {
+      inset-inline: 13.5%;
     }
   }
 }

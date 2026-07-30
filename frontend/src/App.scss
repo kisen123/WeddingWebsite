@@ -1,6 +1,27 @@
-html,
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: #fce9dc;
+  color-scheme: light;
+}
+
 body {
-  height: 100%;
   margin: 0;
-  background-color: #ffdbea; /* your color */
+  overflow-x: hidden;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+.wedding-app {
+  background:
+    radial-gradient(circle at 50% 20%, rgb(255 255 255 / 36%), transparent 42%),
+    #fce9dc;
+  min-height: 100dvh;
 }
