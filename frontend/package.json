@@ -10,7 +10,8 @@
     "lint:fix": "eslint . --fix",
     "format": "prettier . --write",
     "format:check": "prettier . --check",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "screenshots": "bash scripts/render-screenshots.sh"
   },
   "dependencies": {
     "i18next": "^25.8.18",
