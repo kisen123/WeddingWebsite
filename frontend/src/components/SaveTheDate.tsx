@@ -201,7 +201,7 @@ export default function SaveTheDate() {
             src={coupleImage}
             alt="Kaja og Kristian sammen"
             x="20%"
-            y="25%"
+            y="30%"
             scale={1.04}
           />
 
