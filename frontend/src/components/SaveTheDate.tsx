@@ -194,7 +194,7 @@ export default function SaveTheDate() {
               <span>Kristian</span>
             </h1>
 
-            <p className="save-the-date__script-title">Hold av dagen!</p>
+            <p className="save-the-date__script-title">Hold av datoen</p>
           </header>
 
           <PannablePhoto

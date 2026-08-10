@@ -124,12 +124,12 @@
   }
 
   &__script-title {
+    -webkit-text-stroke: 0.01em currentColor;
     font-size: min(8.5cqw, 2.65rem);
     line-height: 1;
     letter-spacing: 0.05em;
     margin: 1cqw 0 0;
     transform: rotate(-3deg);
-    font-weight: 600;
   }
 
   &__photo-frame {
