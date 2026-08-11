@@ -1,19 +1,11 @@
 import './App.scss';
 
-import { useEffect } from 'react';
-
-import { Header } from './components/Header/Header.tsx';
-import { MainPage } from './components/MainPage/MainPage.tsx';
+import SaveTheDate from './components/SaveTheDate';
 
 export default function App() {
-  useEffect(() => {
-    window.history.replaceState(null, '', '/');
-  }, []);
-
   return (
-    <div className="wedding-app">
-      <Header />
-      <MainPage />
-    </div>
+    <section className="wedding-app">
+      <SaveTheDate />
+    </section>
   );
 }

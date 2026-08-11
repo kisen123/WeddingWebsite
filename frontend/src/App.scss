@@ -1,25 +1,34 @@
-html,
-body,
-#root {
-  min-height: 100%;
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #fce9dc;
+  color-scheme: only light;
 }
 
 body {
+  background-color: #fce9dc;
+  color: #a42b34;
   margin: 0;
-  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+#root {
+  background-color: #fce9dc;
+  min-height: 100dvh;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
 }
 
 .wedding-app {
-  position: relative;
-  min-height: 100vh;
-  isolation: isolate;
-}
-
-.wedding-app::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  filter: grayscale(30%);
-  opacity: 0.35;
+  background:
+    radial-gradient(circle at 50% 20%, rgb(255 255 255 / 36%), transparent 42%),
+    #fce9dc;
+  min-height: 100dvh;
 }
