@@ -14,7 +14,17 @@
   --accent-orange: #e7782f;
 }
 
+// Was global body styling on the standalone save-the-date site.
+body:has(.save-the-date) {
+  background-color: var(--cream);
+  color: var(--ink-red);
+  margin: 0;
+}
+
 .save-the-date {
+  background:
+    radial-gradient(circle at 50% 20%, rgb(255 255 255 / 36%), transparent 42%),
+    var(--cream);
   box-sizing: border-box;
   display: grid;
   min-height: 100dvh;
