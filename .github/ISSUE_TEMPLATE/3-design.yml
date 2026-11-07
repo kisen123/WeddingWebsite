@@ -1,0 +1,42 @@
+name: 🎨 Design change or feedback
+description: Colours, fonts, layout, images, decorations. Something should look different.
+title: '[Design]: '
+labels: [design]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        No technical knowledge needed. Describe what you'd like it to *feel*
+        like, and paste screenshots, sketches or photos of things you like.
+
+  - type: input
+    id: where
+    attributes:
+      label: Which part of the site?
+      placeholder: The RSVP card, the top of the front page, the menu, …
+    validations:
+      required: true
+
+  - type: textarea
+    id: change
+    attributes:
+      label: What would you like changed?
+      placeholder: Softer colours, more like the save-the-date card. The names should be bigger on a phone.
+    validations:
+      required: true
+
+  - type: textarea
+    id: inspiration
+    attributes:
+      label: Inspiration
+      description: Paste images or sketches straight in, or links (Pinterest, other wedding sites, the design-review page).
+
+  - type: dropdown
+    id: options
+    attributes:
+      label: Want to see a few options first?
+      options:
+        - Yes, show me 2–3 variants to choose from
+        - No, just do it like described
+    validations:
+      required: true

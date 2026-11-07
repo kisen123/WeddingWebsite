@@ -1,0 +1,71 @@
+name: 🐛 Bug
+description: Something looks wrong or doesn't work.
+title: '[Bug]: '
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: A screenshot or screen recording says more than a thousand words. Paste it here.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect instead?
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: How to reproduce
+      placeholder: |
+        1. Open https://kajaogkristian.no on my phone
+        2. Scroll to RSVP
+        3. Tap "Jeg deltar!"
+        4. …
+
+  - type: input
+    id: url
+    attributes:
+      label: Page / link
+      placeholder: https://kajaogkristian.no/save-the-date
+
+  - type: dropdown
+    id: device
+    attributes:
+      label: Device and browser
+      multiple: true
+      options:
+        - iPhone / Safari
+        - Android / Chrome
+        - iPad / tablet
+        - Desktop / Chrome
+        - Desktop / Safari
+        - Desktop / Firefox
+        - Desktop / Edge
+        - Local dev only
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: How bad is it?
+      options:
+        - Blocks guests (e.g. cannot RSVP, page broken)
+        - Looks wrong but works
+        - Small cosmetic detail
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Errors or logs (optional)
+      description: Browser console or API output, if you have it.
+      render: shell
