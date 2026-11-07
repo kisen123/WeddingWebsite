@@ -25,13 +25,16 @@ below is a gate. Stop and report if one fails.
    `/save-the-date`. Blockers or majors stop the release.
 5. **Content sanity:** run the `i18n-auditor` subagent. Grep the build for
    placeholder text ("Item 1", "Your Names", "TODO", "test").
+   Also run the `security-reviewer` subagent with `full` scope. Any blocker
+   stops the release.
 6. **Backend reality check:** if the release includes features that call the
    API (RSVP), confirm the API is deployed and `VITE_API_BASE_URL` is set for the
    build. GitHub Pages hosts only the static frontend.
 7. **Summarize** what ships (commits since the last release, screenshots) and
    **ask the user for explicit confirmation**.
 8. Only then: `gh pr create --base master --head develop --title "Release <date>"`
-   with the summary as the body. The user merges it. Never push to `master`
-   directly.
+   with the summary as the body. The user merges it on GitHub using **"Create a
+   merge commit"**. Never squash or rebase a release PR, because that would make
+   `master` and `develop` diverge. Never push to `master` directly.
 9. After deploy: open https://kajaogkristian.no and run
    `npm run screenshots -- --url https://kajaogkristian.no --out test-results/prod`.

@@ -6,7 +6,17 @@ argument-hint: "<name> [feature|fix|chore]"
 
 # New feature in a worktree
 
-Arguments: `$ARGUMENTS`. The first word is NAME (short kebab-case; ask if missing). The optional second word is TYPE: `feature` (default), `fix` or `chore`. BRANCH = `TYPE/NAME`. Substitute them in the commands below.
+Arguments: `$ARGUMENTS`. This is either a GitHub issue number (`#12` / `12`) or a NAME
+(short kebab-case) with an optional TYPE (`feature` default, `fix`, `chore`).
+
+- **Issue number given:** run `gh issue view <n>` and read it fully, including
+  the acceptance checklist. Derive TYPE from its labels (`bug` → `fix`,
+  `chore`/`dependencies`/`security` → `chore`, anything else → `feature`) and
+  NAME as `<n>-<2-4 word slug of the title>`.
+- **No issue:** suggest creating one first (`gh issue create`, picking the
+  matching template) unless it's a tiny chore.
+
+BRANCH = `TYPE/NAME`. Substitute them in the commands below.
 
 ## Create
 
@@ -43,12 +53,17 @@ Then tell the user how to work in it:
 
 ```bash
 git push -u origin BRANCH
-gh pr create --base develop --fill        # or open the PR on GitHub
+gh pr create --base develop --fill        # fill in .github/pull_request_template.md
 ```
+The PR body must contain `Closes #<n>` when there is an issue, plus screenshots
+for visual changes. Never merge into `develop` locally. The PR is merged on
+GitHub after CI passes, by the user.
+
 After merge, from the main checkout:
 ```bash
 git worktree remove .claude/worktrees/NAME
-git branch -d BRANCH
+git branch -d BRANCH        # use -D if the PR was squash-merged
+git switch develop && git pull
 git worktree prune
 ```
 `git worktree list` shows every active worktree.

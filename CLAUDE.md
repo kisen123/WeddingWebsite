@@ -24,17 +24,25 @@ clicking through the RSVP form, hovering, reading console errors. Use
   background while you keep working.
 - `i18n-auditor`: after touching strings or Q&A content. Cheap (Haiku).
 - `backend-dev`: hand off .NET/EF/Postgres work so frontend context stays clean.
+- `security-reviewer`: bad practices and vulnerable dependencies. It is
+  **required** before opening a PR that touches `backend/`, auth or the admin page,
+  guest data, dependencies, workflows or Docker files, and before every release.
+  Use `diff` scope for PRs and `full` for periodic audits. The built-in
+  `/security-review` command is a good second opinion on a branch.
 
-After finishing a feature, launch `visual-reviewer` and `i18n-auditor` **in
-parallel** (one message, two Agent calls) and fix what they report before
-committing.
+After finishing a feature, launch `visual-reviewer` and `i18n-auditor` (plus
+`security-reviewer` when the rule above applies) **in parallel**, in one message
+with several Agent calls, and fix what they report before opening the PR.
 
 For two independent features at once, spawn implementation agents with
 `isolation: "worktree"` so each gets its own checkout and branch.
 
 ## Guardrails
 
-- Never push to `master` or force-push; `.claude/settings.json` denies it.
+- Never push to `master`/`develop` or force-push; `.claude/settings.json` denies it,
+  and branch protection enforces it on GitHub. Finish work by pushing the
+  feature branch and opening a PR (`gh pr create --base develop`). Merging the
+  PR is the user's call.
 - Hooks: edited frontend files are auto-formatted with Prettier; when the session
   stops with changed frontend files, ESLint runs and blocks on errors.
 - `frontend/test-results/` is scratch output (gitignored).

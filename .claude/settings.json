@@ -32,7 +32,11 @@
       "Bash(docker compose logs *)",
       "Bash(gh pr view *)",
       "Bash(gh pr list *)",
-      "Bash(gh pr checks *)"
+      "Bash(gh pr checks *)",
+      "Bash(gh issue view *)",
+      "Bash(gh issue list *)",
+      "Bash(npm audit *)",
+      "Bash(dotnet list * package *)"
     ],
     "deny": [
       "Read(./.env)",
@@ -45,7 +49,11 @@
       "Bash(git push --force*)",
       "Bash(git push -f *)",
       "Bash(git push * --force*)",
-      "Bash(git push * -f)"
+      "Bash(git push * -f)",
+      "Bash(git push * develop)",
+      "Bash(git push * develop *)",
+      "Bash(git push * HEAD:develop*)",
+      "Bash(gh pr merge *)"
     ]
   },
   "hooks": {

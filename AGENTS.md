@@ -44,12 +44,19 @@ safe to run from several worktrees at once. It exits with code 2 and reports
 
 ## Branches and releases
 
-- `master`: **production**. Every push deploys to kajaogkristian.no. Never commit
-  or push to it directly.
-- `develop`: integration branch. All work merges here first.
-- `feature/<name>` / `fix/<name>` / `chore/<name>`: branched from `develop`,
-  merged back via PR.
-- Release = PR `develop → master` (see the `release` skill).
+- `master`: **production**. Every merge deploys to kajaogkristian.no.
+- `develop`: integration branch. All work lands here first.
+- Both are protected on GitHub. Changes arrive **only through pull requests** with
+  green CI (`frontend`, `backend`, `security`). Never merge locally into
+  `develop`/`master` and never push to them.
+- Work starts from a GitHub issue (templates: feature, bug, design, content,
+  tech). Branch `feature/<issue#>-<name>`, `fix/…` or `chore/…` from `develop`, and
+  open a PR to `develop` whose body says `Closes #<issue#>`.
+- Merge method: feature PRs into `develop` may be squashed. **Release PRs
+  `develop → master` must use "Create a merge commit"**; squashing them makes
+  the branches diverge. See the `release` skill.
+- Dependabot opens weekly dependency PRs against `develop`.
+- One-time GitHub setup (labels, protection, merge settings): `bash .github/setup-repo.sh`.
 
 ## Parallel work with git worktrees
 
