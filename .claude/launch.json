@@ -1,0 +1,40 @@
+{
+  // Dev servers Claude Code can start for previews (desktop app / run skill).
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "frontend",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "--", "--port", "5173"],
+      "cwd": "frontend",
+      "port": 5173,
+      // Parallel worktrees each get the next free port.
+      "autoPort": true
+    },
+    {
+      "name": "save-the-date",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "--", "--port", "5173"],
+      "cwd": "frontend",
+      "port": 5173,
+      "autoPort": true,
+      "url": "http://localhost:5173/save-the-date"
+    },
+    {
+      "name": "backend",
+      "runtimeExecutable": "dotnet",
+      "runtimeArgs": ["run", "--project", "backend/api"],
+      "port": 5050,
+      // CORS and the frontend's API URL expect exactly 5050.
+      "autoPort": false,
+      "env": { "ASPNETCORE_ENVIRONMENT": "Development" }
+    },
+    {
+      "name": "full-stack (docker)",
+      "runtimeExecutable": "docker",
+      "runtimeArgs": ["compose", "up", "--watch"],
+      "port": 5173,
+      "autoPort": false
+    }
+  ]
+}

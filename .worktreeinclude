@@ -1,0 +1,5 @@
+# Gitignored files to copy into new Claude-created worktrees (gitignore syntax)
+.env
+.env.local
+frontend/.env
+frontend/.env.local
