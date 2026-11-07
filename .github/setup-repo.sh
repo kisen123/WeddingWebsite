@@ -20,6 +20,7 @@ label chore        cfd3d7 "Tech, tooling, refactor"
 label security     b60205 "Security or privacy"
 label dependencies 0366d6 "Dependency updates (Dependabot)"
 label admin        5319e7 "Admin page"
+label dotnet       512bd4 ".NET backend specific; revisit if the backend changes"
 
 echo "→ Merge settings"
 # Release PRs (develop → master) MUST use a merge commit; squashing them would
