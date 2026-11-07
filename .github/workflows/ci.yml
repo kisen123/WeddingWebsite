@@ -1,0 +1,65 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [develop, master]
+  push:
+    branches: [develop]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  frontend:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run format:check
+      - run: npm run build
+
+  backend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '9.0.x'
+      - run: dotnet build bryllup-nettside.sln
+
+  security:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '9.0.x'
+      - name: npm audit (production deps, high+ fails)
+        working-directory: frontend
+        run: npm audit --omit=dev --audit-level=high
+      - name: NuGet vulnerable packages
+        # Reports as a warning for now: Microsoft.OpenApi (via Swashbuckle) has
+        # a known high advisory. Make this blocking once that is resolved.
+        run: |
+          dotnet restore bryllup-nettside.sln
+          out=$(dotnet list bryllup-nettside.sln package --vulnerable --include-transitive)
+          echo "$out"
+          if echo "$out" | grep -qE 'High|Critical'; then
+            echo "::warning title=Vulnerable NuGet packages::High/critical advisories found (see log)"
+          fi

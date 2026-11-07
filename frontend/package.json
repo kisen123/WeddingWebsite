@@ -5,12 +5,13 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build && cp dist/index.html dist/404.html",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "format": "prettier . --write",
     "format:check": "prettier . --check",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "screenshots": "node scripts/screenshots.mjs"
   },
   "dependencies": {
     "i18next": "^25.8.18",
@@ -18,7 +19,6 @@
     "react-dom": "^19.2.4",
     "react-i18next": "^16.5.8",
     "react-markdown": "^10.1.0",
-    "react-router-dom": "^7.13.1",
     "rehype-raw": "^7.0.0"
   },
   "devDependencies": {
@@ -33,6 +33,7 @@
     "eslint-plugin-react-refresh": "^0.5.2",
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "globals": "^17.4.0",
+    "playwright": "^1.65.0",
     "prettier": "^3.8.1",
     "sass": "^1.98.0",
     "typescript": "~5.9.3",

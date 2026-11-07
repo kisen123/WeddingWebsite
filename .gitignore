@@ -10,7 +10,11 @@
 
 # Rider/VS/VSCode
 .idea/
-.vscode/
+.vscode/*
+!.vscode/settings.json
+!.vscode/launch.json
+!.vscode/tasks.json
+!.vscode/extensions.json
 *.suo
 *.user
 *.userprefs
@@ -20,5 +24,12 @@
 Thumbs.db
 
 # Environment
-.env
-.env.local
+.env*
+!.env.example
+
+# Claude Code
+.claude/worktrees/
+.claude/settings.local.json
+
+# Playwright / screenshot output
+frontend/test-results/

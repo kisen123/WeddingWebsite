@@ -8,6 +8,7 @@ export default defineConfig({
     host: true,
     watch: {
       usePolling: true,
+      ignored: ['**/*.ttf', '**/*.woff', '**/*.woff2', '**/*.otf'],
     },
   },
 });

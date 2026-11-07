@@ -1,0 +1,38 @@
+name: 🔧 Tech, security or chore
+description: Refactoring, dependencies, CI, hosting, security findings, developer tooling.
+title: '[Tech]: '
+labels: [chore]
+body:
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Kind
+      options:
+        - Security finding / hardening
+        - Dependency upgrade
+        - Hosting / deployment / infrastructure
+        - CI / tooling / agent setup
+        - Refactor / tech debt
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What is wrong or missing, and why it matters. For security findings, include severity and location (file:line), but **never paste secrets**.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+
+  - type: textarea
+    id: done
+    attributes:
+      label: Done when…
+      value: |
+        - [ ]

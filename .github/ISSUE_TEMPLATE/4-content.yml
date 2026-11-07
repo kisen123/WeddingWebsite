@@ -1,0 +1,37 @@
+name: 📝 Text or content
+description: New or changed text, Q&A answers, program times, links, photos.
+title: '[Content]: '
+labels: [content]
+body:
+  - type: input
+    id: where
+    attributes:
+      label: Where on the site?
+      placeholder: Q&A → "Kleskode", Program → Saturday, …
+    validations:
+      required: true
+
+  - type: textarea
+    id: current
+    attributes:
+      label: Current text (if changing something)
+
+  - type: textarea
+    id: norwegian
+    attributes:
+      label: New text, Norwegian 🇳🇴
+      description: Markdown works (**bold**, [link](https://…)).
+    validations:
+      required: true
+
+  - type: textarea
+    id: english
+    attributes:
+      label: New text, English 🇬🇧
+      description: Leave empty to have it translated, and you'll review the translation.
+
+  - type: textarea
+    id: files
+    attributes:
+      label: Images or files
+      description: Paste or drag photos here.

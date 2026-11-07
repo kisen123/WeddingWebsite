@@ -1,0 +1,82 @@
+name: ✨ Feature or idea
+description: Something new for the website, e.g. an admin page, a photo gallery or a song wish list.
+title: '[Feature]: '
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Describe the **goal** more than the solution. Rough ideas are welcome;
+        details can be filled in later.
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Front page / hero
+        - Program
+        - RSVP
+        - Q&A
+        - Contact
+        - Admin page
+        - Save-the-date
+        - Backend / API / database
+        - Whole site
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: goal
+    attributes:
+      label: 'Goal: who is it for, and why?'
+      placeholder: |
+        As a guest I want to … so that …
+        As the hosts we want to … so that …
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: What should it do or look like? Paste images and sketches straight into this box.
+      placeholder: A page at /admin listing all RSVPs with filters for attending / not attending, …
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Done when…
+      description: A checklist that makes it obvious when this is finished.
+      value: |
+        - [ ]
+        - [ ]
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      options:
+        - Must have before invitations go out
+        - Must have before the wedding
+        - Nice to have
+        - Someday / maybe
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: concerns
+    attributes:
+      label: Considerations
+      options:
+        - label: Stores, shows or changes guest data (needs a security review)
+        - label: Needs login / admin access
+        - label: Needs text in both Norwegian and English
+        - label: Needs a design round with Kaja first
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else?
+      placeholder: Links to sites that do this well, open questions, …
