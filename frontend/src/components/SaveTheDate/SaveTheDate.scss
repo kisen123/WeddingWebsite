@@ -1,0 +1,303 @@
+@font-face {
+  font-family: 'Gravity Handwritten';
+  src: url('../../assets/saveTheDate/gravity_handwritten.ttf')
+    format('truetype');
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+}
+
+:root {
+  --cream: #fce9dc;
+  --ink-red: #a42b34;
+  --script-pink: #a42b34;
+  --accent-orange: #e7782f;
+}
+
+.save-the-date {
+  box-sizing: border-box;
+  display: grid;
+  min-height: 100dvh;
+  place-items: center;
+  padding: clamp(0.5rem, 2vw, 1.5rem);
+
+  &__card {
+    aspect-ratio: 2 / 3;
+    container-type: inline-size;
+    isolation: isolate;
+    margin: 0;
+    position: relative;
+    width: min(
+      calc(100vw - clamp(1rem, 4vw, 3rem)),
+      32rem,
+      calc((100dvh - clamp(1rem, 4vw, 3rem)) * 2 / 3)
+    );
+  }
+
+  &__border,
+  &__border-svg {
+    height: 100%;
+    inset: 0;
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+  }
+
+  &__border {
+    z-index: 0;
+
+    svg {
+      display: block;
+      overflow: visible;
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: minmax(0, 0.85fr) auto minmax(0, 0.6fr);
+    inset: 8.5% 13%;
+    position: absolute;
+    text-align: center;
+    z-index: 1;
+  }
+
+  &__intro {
+    align-content: center;
+    display: grid;
+    justify-items: center;
+    min-height: 0;
+  }
+
+  &__eyebrow {
+    align-items: center;
+    color: var(--ink-red);
+    display: grid;
+    font-family: 'Bebas Neue', serif;
+    font-size: min(6cqw, 2.1rem);
+    font-weight: 500;
+    grid-template-columns: 1fr auto 1fr;
+    letter-spacing: 0.01em;
+    margin-block-end: 1cqw;
+    text-transform: uppercase;
+    width: 100%;
+
+    p {
+      margin: 0;
+      white-space: nowrap;
+    }
+  }
+
+  &__names {
+    align-items: baseline;
+    color: var(--ink-red);
+    column-gap: 0.2em;
+    display: flex;
+    font-family: 'Bebas Neue', serif;
+    font-size: min(13.5cqw, 4.2rem);
+    font-weight: 300;
+    justify-content: center;
+    letter-spacing: 0.005em;
+    line-height: 1;
+    margin: 0;
+    min-width: 0;
+    text-transform: uppercase;
+    white-space: nowrap;
+    width: 100%;
+
+    span {
+      white-space: nowrap;
+    }
+
+    i {
+      font-size: 0.55em;
+      font-style: normal;
+      font-weight: 600;
+      vertical-align: 0.16em;
+    }
+  }
+
+  &__script-title,
+  &__more-info {
+    color: var(--script-pink);
+    font-family: 'Gravity Handwritten', cursive;
+    font-weight: 400;
+  }
+
+  &__script-title {
+    -webkit-text-stroke: 0.01em currentColor;
+    font-size: min(8.5cqw, 2.65rem);
+    line-height: 1;
+    letter-spacing: 0.05em;
+    margin: 1cqw 0 0;
+    transform: rotate(-3deg);
+  }
+
+  &__photo-frame {
+    align-self: center;
+    aspect-ratio: 1.55;
+    border-radius: 8cqw;
+    justify-self: center;
+    margin: 0;
+    max-width: 100%;
+    min-width: 0;
+    overflow: hidden;
+    position: relative;
+    transform: translateY(-4cqw);
+    width: 100%;
+  }
+
+  &__photo {
+    height: 100%;
+    inset: 0;
+    object-fit: cover;
+    object-position: var(--photo-x) var(--photo-y);
+    position: absolute;
+    transform: scale(var(--photo-scale));
+    transform-origin: var(--photo-x) var(--photo-y);
+    width: 100%;
+  }
+
+  &__details {
+    align-content: center;
+    color: var(--ink-red);
+    display: grid;
+    font-family: 'Bebas Neue', serif;
+    font-size: min(5.2cqw, 2.15rem);
+    font-weight: 600;
+    justify-items: center;
+    letter-spacing: 0.065em;
+    line-height: 1.15;
+    position: relative;
+    text-transform: uppercase;
+  }
+
+  &__location,
+  &__date {
+    align-items: center;
+    display: inline-flex;
+    gap: min(1.6cqw, 0.5rem);
+    justify-content: center;
+  }
+
+  &__location {
+    color: inherit;
+    margin-block-end: 2cqw;
+    text-decoration: none;
+
+    &:focus-visible,
+    &:hover {
+      text-decoration: underline;
+      text-decoration-thickness: 0.08em;
+      text-underline-offset: 0.2em;
+    }
+  }
+
+  &__date {
+    paint-order: stroke fill;
+    white-space: nowrap;
+  }
+
+  &__detail-icon {
+    color: var(--accent-orange);
+    fill: none;
+    flex: 0 0 auto;
+    height: min(5cqw, 1.35rem);
+    overflow: visible;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.8;
+    width: min(5cqw, 1.35rem);
+  }
+
+  &__more-info {
+    -webkit-text-stroke: 0.01em currentColor;
+    font-size: min(9.3cqw, 4.5rem);
+    letter-spacing: 0;
+    margin: 2cqw 0 0;
+    text-transform: none;
+    transform: rotate(-2deg);
+  }
+
+  &__decoration {
+    color: var(--accent-orange);
+    display: block;
+    position: absolute;
+
+    img,
+    svg {
+      display: block;
+      height: 100%;
+      width: 100%;
+    }
+
+    svg {
+      fill: none;
+      stroke: currentColor;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 2.4;
+    }
+
+    &--bow {
+      height: 8cqw;
+      left: 1cqw;
+      position: relative;
+      width: 12cqw;
+    }
+
+    &--sparkles-top {
+      height: 10cqw;
+      justify-self: end;
+      position: relative;
+      right: 1cqw;
+      width: 8cqw;
+    }
+
+    &--sparkles-bottom {
+      height: 13cqw;
+      left: 0;
+      top: 50%;
+      transform: translate(-18%, -42%) scale(0.8);
+      width: 10cqw;
+    }
+
+    &--flower {
+      height: 16cqw;
+      right: 0;
+      top: 50%;
+      transform: translate(10%, -48%);
+      width: 13cqw;
+    }
+  }
+
+  &__map-preview {
+    border-radius: 0.75rem;
+    box-shadow: 0 0.25rem 1rem rgb(68 32 23 / 25%);
+    overflow: hidden;
+    position: fixed;
+    z-index: 1000;
+
+    iframe {
+      border: 0;
+      display: block;
+      height: 11.25rem;
+      width: 16.25rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .save-the-date {
+    padding: 0.35rem;
+
+    &__card {
+      width: min(calc(100vw - 0.7rem), calc((100dvh - 0.7rem) * 2 / 3));
+    }
+
+    &__content {
+      inset-inline: 13.5%;
+    }
+  }
+}
