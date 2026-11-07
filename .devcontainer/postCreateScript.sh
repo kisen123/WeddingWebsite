@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 set -e
 
-cd /workspaces/bryllup-nettside/frontend
+cd "$(dirname "${BASH_SOURCE[0]}")/../frontend"
 npm install
 
-cd /workspaces/bryllup-nettside
+cd ..
 dotnet restore bryllup-nettside.sln
