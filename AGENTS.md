@@ -56,7 +56,18 @@ safe to run from several worktrees at once. It exits with code 2 and reports
   `develop → master` must use "Create a merge commit"**; squashing them makes
   the branches diverge. See the `release` skill.
 - Dependabot opens weekly dependency PRs against `develop`.
-- One-time GitHub setup (labels, protection, merge settings): `bash .github/setup-repo.sh`.
+
+### Repository settings (configured on GitHub, not in code)
+
+- Branch protection on `develop` and `master`: PR required, checks `frontend`,
+  `backend`, `security` must pass, conversations resolved, no force-push or
+  deletion. **It applies to admins too.**
+- Merge methods: merge commit and squash allowed, rebase disabled. Branches are
+  deleted after merge. Commit title and message = PR title and body.
+- Private vulnerability reporting is on (linked from the issue chooser).
+- Labels: `enhancement`, `bug`, `design`, `content`, `chore`, `security`,
+  `dependencies`, `admin`, `dotnet` (.NET-specific; revisit if the backend changes).
+- If you change any of these in the GitHub UI, update this list.
 
 ## Parallel work with git worktrees
 
