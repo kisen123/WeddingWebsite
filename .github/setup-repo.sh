@@ -30,7 +30,11 @@ gh api -X PATCH "repos/$REPO" \
   -F allow_rebase_merge=false \
   -F delete_branch_on_merge=true \
   -f squash_merge_commit_title=PR_TITLE \
-  -f merge_commit_title=PR_TITLE >/dev/null
+  -f squash_merge_commit_message=PR_BODY \
+  -f merge_commit_title=PR_TITLE \
+  -f merge_commit_message=PR_BODY >/dev/null
+# GitHub validates title+message as a pair (PR_TITLE goes with PR_BODY or BLANK),
+# so both must always be sent together.
 
 protect() {
   local branch="$1"
